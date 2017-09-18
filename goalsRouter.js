@@ -9,8 +9,6 @@ const {Goal} = require('./models');
 
 router.use(bodyParser.json());
 
-mongoose.Promise = global.Promise;
-
 router.get('/', (req, res) => {
 	Goal
 	.find()
@@ -115,18 +113,6 @@ router.put('/:id', (req, res) => {
 	.then(updatedGoal => res.status(201).json(updatedGoal.apiRepr()))
 	.catch(err => res.status(500).json({error: 'Sorry, it looks like the id entered is not valid. Please try again.'}));
 });
-
-
-// router.delete('/:id', (req, res) => {
-//   Goal
-//     .findByIdAndRemove(req.params.id)
-//     .exec()
-//     .then(() => {
-//       console.log(`Deleted goal with id \`${req.params.ID}\``);
-//       res.status(204).end();
-//     });
-// });
-
 
 router.use('*', function(req, res) {
 	res.status(404).json({message: 'Not Found'});
