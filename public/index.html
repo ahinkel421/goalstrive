@@ -5,9 +5,11 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+	<!-- Homepage -->
 	<div id="homepage">
 		<nav class="navbar">
-			<h1 class="homepage-header">Goalstrive</h1>
+			<h1 class="navbar-header">Goalstrive</h1>
 			<h3 class="nav-link" id="login-link">Log In</h3>
 			<h3 class="nav-link" id="get-started-link">Get Started</h3>
 		</nav>
@@ -16,8 +18,7 @@
 			<p class="overview">While having large aspirations to aim for is critical to personal success, it’s easy to get intimidated by these goals looming before us and never get started. With Goalstrive, we take these goals and break them down into smaller, more achievable goals. Here, we focus on the journey, not just the destination itself. Start your journey today.</p>
 			<button>Get Started</button>
 			<div>
-				<h4>Already have an account?</h4>
-				<h4>Log in</h4>
+				<span>Already have an account? </span><span class="alt-link">Log in</span>
 			</div>
 			<h6>Free Demo</h6>
 		</section>
@@ -30,7 +31,120 @@
 			<a href="https://github.com/ahinkel421" target="blank"><img src="github.png" id="github-logo"></a>
 		</footer>
 	</div>
+
+	<!-- Sign-up Sheet -->
+	<div class="hidden" id="sign-up-page">
+		<nav class="navbar">
+			<h1 class="navbar-header">Goalstrive</h1>
+			<h3 class="nav-link" id="login-link">Log In</h3>
+			<h3 class="nav-link" id="get-started-link">Get Started</h3>
+		</nav>
+		<div class="auth-box">
+			<h1>Goalstrive</h1>
+			<h3>Get started for free now</h3>
+			<form>
+				<input type="text" name="username" placeholder="Username">
+				<input type="text" name="password" placeholder="Password">
+				<button class="submit-button">Sign Up</button>
+			</form>
+			<span>Already have an account?</span><span class="alt-link">Log In</span>
+			<footer>
+				<h6>© 2017 Adam Hinkel</h6>
+				<a href="https://github.com/ahinkel421" target="blank"><img src="github.png" id="github-logo"></a>
+			</footer>
+		</div>
+	</div>
+
+	<!-- Log-in Sheet -->
+	<div class="hidden" id="log-in-page">
+		<nav class="navbar">
+			<h1 class="navbar-header">Goalstrive</h1>
+			<h3 class="nav-link" id="login-link">Log In</h3>
+			<h3 class="nav-link" id="get-started-link">Get Started</h3>
+		</nav>	
+		<div class="auth-box">
+			<h1>GoalStrive</h1>
+			<h3>Log in below</h3>
+			<form>
+				<input type="text" name="username" placeholder="Username">
+				<input type="text" name="password" placeholder="Password">
+				<button class="submit-button">Log In</button>
+			</form>
+			<span>Don't have an account?</span><span>Sign Up</span>
+		</div>	
+		<footer>
+			<h6>© 2017 Adam Hinkel</h6>
+			<a href="https://github.com/ahinkel421" target="blank"><img src="github.png" id="github-logo"></a>
+		</footer>
+	</div>
+
+	<!--No Goals Page-->
+	<div class="hidden" id="no-goals">
+		<nav class="navbar">
+			<h1 class="navbar-header">Goalstrive</h1>
+			<h3 class="nav-link" id="logout-link">Log Out</h3>
+		</nav>
+		<section>
+			<h2>My Destination Goals</h2>	
+			<p>You currently have no destination goals set. To create a new destination goal, click the button below.</p>
+			<button>Create new goal</button>
+		</section>
+		<section>
+			<h3>To get you started, here are some ideas for Destination Goals:</h3>
+			<ul>
+				<li>Get accepted into a university</li>
+				<li>Learn a new language</li>
+				<li>Get a job in my field</li>
+				<li>Buy a home</li>
+				<li>Find that special someone</li>
+				<li>Start a family</li>
+			</ul>
+		</section>
+		<section>
+			<h2>"All you need is the plan, the road map, and the courage to press on to your destination."</h2>
+			<h2>-Earl Nightingale</h2>
+		</section>
+		<footer>
+			<h6>© 2017 Adam Hinkel</h6>
+			<a href="https://github.com/ahinkel421" target="blank"><img src="github.png" id="github-logo"></a>
+		</footer>
+	</div>
+
+	<!--New Destination Goal Submission Form-->
+	<div class="hidden" id="new-destination-goal-page">
+		<nav class="navbar">
+			<h1 class="navbar-header">Goalstrive</h1>
+			<h3 class="nav-link" id="logout-link">Log Out</h3>
+		</nav>
+		<h2>New Destination Goal</h2>
+		<div id="new-goal-form">
+			<form>
+				<label>Destination (goal name)</label>
+				<input type="text" name="destination-goal" placeholder="i.e. Get a job in tech">
+				<label>ETA (due date)</label>
+				<input type="text" name="ETA" placeholder="i.e. January 20, 2018">
+				<label>Description</label>
+				<input type="text" name="Description" placeholder="i.e. I really want to get a job in tech, but I think that it is going to take some time. Considering that I will be done with the Thinkful bootcamp by early December, I’m thinking I could get a job by late January.">
+				<button class="submit-button">Submit</button>
+			</form>
+		</div>
+		<h2>“Success is a journey, not a destination. The doing is often more important than the outcome.”</h2>
+		<h2>-Arthur Ashe</h2>
+	</div>
+
+	<!--My Destination Goals-->
+	<div class="hidden" id="my-destination-goals-page">
+		<nav class="navbar">
+			<h1 class="navbar-header">Goalstrive</h1>
+			<h3 class="nav-link" id="logout-link">Log Out</h3>
+		</nav>
+		<h2>My Destination Goals</h2>
+		<h3 class="destination-goal"></h3><span class="eta"></span>
+		
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
+
+
