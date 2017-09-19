@@ -29,5 +29,22 @@
 }
 
 .nav-link {
-	
+	position: absolute;
+	color: #8A2818;
+	font-family: 'Raleway', sans-serif;
+	font-weight: normal;
+	margin: 0;
+}
+
+#login-link {
+	right: 180px;
+	top: 20px;
+}
+
+#get-started-link {
+	right: 38px;
+	color: #C6FFEC;
+	border: 1px solid #C6FFEC;
+	padding: 5px;
+	top: 15px;
 }
