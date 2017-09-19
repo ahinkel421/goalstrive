@@ -6,6 +6,12 @@
 	display: none;
 }
 
+/*
+==============
+Navbar Styling
+==============
+*/
+
 .navbar {
 	background-color: #59D1AA;
 	position: fixed;
@@ -45,6 +51,63 @@
 	right: 38px;
 	color: #C6FFEC;
 	border: 1px solid #C6FFEC;
+	border-radius: 2px;
 	padding: 5px;
 	top: 15px;
 }
+
+.navbar-header:hover, #login-link:hover, #get-started-link:hover {
+	cursor: pointer;
+}
+
+#login-link:hover {
+	color: #611C11;
+}
+
+#get-started-link:hover {
+	color: #A7F7DB;
+	border-color: #A7F7DB;
+}
+
+/*
+==============
+Footer Styling
+==============
+*/
+
+footer {
+	background-color: #59D1AA;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 50px;
+}
+
+#copyright {
+	font-size: 12px;
+	margin: 0;
+	position: absolute;
+	left: 15px;
+	top: 20px;
+}
+
+#github-logo {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+}
+
+/*
+================
+Homepage Styling
+================
+*/
+
+
+
+
+
