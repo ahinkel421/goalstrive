@@ -4,7 +4,7 @@ $(function () {
 		$('#sign-up-page').removeClass('hidden');
 	});
 
-	$('.login-link').on('click', function() {
+	$('.login-link-js').on('click', function() {
 		hideAllPages();
 		$('#log-in-page').removeClass('hidden');
 	});

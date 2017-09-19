@@ -8,10 +8,10 @@
 </head>
 <body>
 	<nav class="navbar">
-		<h1 class="navbar-header home-link">Goalstrive</h1>
+		<h1 class="navbar-header home-link goalstrive-logo">Goalstrive</h1>
 		<div class="navbar-links">
 			<h3 class="nav-link" id="my-goals-link">My Goals</h3>
-			<h3 class="nav-link login-link" id="login-nav-link">Log In</h3>
+			<h3 class="nav-link login-link-js" id="login-nav-link">Log In</h3>
 			<h3 class="nav-link get-started" id="get-started-link">Get Started</h3>
 		</div>
 	</nav>
@@ -20,14 +20,14 @@
 		<section id="introduction">
 			<h2 class="homepage-header">The web app <span class="bold">of</span> the driven, <span class="bold">by</span> the driven, <span class="bold">for</span> the driven...</h2>
 			<p class="overview">While having large aspirations to aim for is critical to personal success, it’s easy to get intimidated by these goals looming before us and never get started. With Goalstrive, we take these goals and break them down into smaller, more achievable goals. Here, we focus on the journey, not just the destination itself. Start your journey today.</p>
-			<button class="get-started alt-link" id="get-started-button">Get Started</button>
+			<button class="get-started button" id="get-started-button">Get Started</button>
 			<div id="login-or-demo">
-				<span>Already have an account? </span><span class="alt-link login-link">Log in</span>
+				<span>Already have an account? </span><span class="alt-link login-link-js">Log in</span>
 			</div>
-			<h6 id="demo">Free Demo</h6>
+			<h6 class="alt-link" id="demo">Free Demo</h6>
 		</section>
 		<section id="more-info">
-			<h2>Why is it so important to break down my goals?</h2>
+			<h2 class="homepage-header">Why is it so important to break down my goals?</h2>
 			<p>More info about the app and what it offers...</p>
 		</section>
 	</div>
@@ -35,26 +35,26 @@
 	<!-- Sign-up Sheet -->
 	<div class="page hidden" id="sign-up-page">
 		<div class="auth-box">
-			<h1>Goalstrive</h1>
+			<h1 class="goalstrive-logo auth-box-header">Goalstrive</h1>
 			<h3>Get started for free now</h3>
 			<form>
-				<input type="text" name="username" placeholder="Username">
-				<input type="text" name="password" placeholder="Password">
-				<button class="submit-button">Sign Up</button>
+				<input class="user-info" type="text" name="username" placeholder="Username">
+				<input class="user-info" type="text" name="password" placeholder="Password">
+				<button class="submit-button button">Sign Up</button>
 			</form>
-			<span>Already have an account? </span><span class="alt-link login-link">Log In</span>
+			<span>Already have an account? </span><span class="alt-link login-link-js">Log In</span>
 		</div>
 	</div>
 
 	<!-- Log-in Sheet -->
 	<div class="page hidden" id="log-in-page">	
 		<div class="auth-box">
-			<h1>Goalstrive</h1>
+			<h1 class="goalstrive-logo auth-box-header">Goalstrive</h1>
 			<h3>Log in below</h3>
 			<form>
-				<input type="text" name="username" placeholder="Username">
-				<input type="text" name="password" placeholder="Password">
-				<button class="submit-button">Log In</button>
+				<input class="user-info" type="text" name="username" placeholder="Username">
+				<input class="user-info" type="text" name="password" placeholder="Password">
+				<button class="submit-button button">Log In</button>
 			</form>
 			<span>Don't have an account? </span><span class="get-started alt-link">Sign Up</span>
 		</div>	
