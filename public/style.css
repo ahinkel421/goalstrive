@@ -35,20 +35,19 @@ Navbar Styling
 }
 
 .nav-link {
-	position: absolute;
+	/*position: absolute;*/
+	display: inline;
 	color: #8A2818;
 	font-family: 'Raleway', sans-serif;
 	font-weight: normal;
-	margin: 0;
+	margin: 10px;
 }
 
-#login-link {
-	right: 180px;
+#login-nav-link {
 	top: 20px;
 }
 
 #get-started-link {
-	right: 38px;
 	color: #C6FFEC;
 	border: 1px solid #C6FFEC;
 	border-radius: 2px;
@@ -56,11 +55,17 @@ Navbar Styling
 	top: 15px;
 }
 
-.navbar-header:hover, #login-link:hover, #get-started-link:hover {
+.navbar-links {
+	position: absolute;
+	right: 30px;
+	padding: 19px;
+}
+
+.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover {
 	cursor: pointer;
 }
 
-#login-link:hover {
+#login-nav-link:hover {
 	color: #611C11;
 }
 
@@ -98,7 +103,7 @@ footer {
 	top: 5px;
 	width: 40px;
 	height: 40px;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 /*
@@ -107,13 +112,60 @@ Homepage Styling
 ================
 */
 
-#homepage {
+/*#homepage {
 	text-align: center;
 	padding-top: 150px;
 	font-family: 'Raleway', sans-serif;
+	letter-spacing: 1px;
+}*/
+
+.page {
+	text-align: center;
+	padding-top: 150px;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 1px;
 }
 
+.homepage-header {
+	width: 66%;
+	margin: 0 auto;
+	font-size: 55px;
+	font-weight: normal;
+}
 
+.bold {
+	font-weight: bold;
+}
+
+.overview {
+	width: 55%;
+	margin: 35px auto;
+	font-size: 20px;
+}
+
+#get-started-button {
+	margin-bottom: 25px;
+	width: 200px;
+	height: 45px;
+	color: #C6FFEC;
+	background-color: #59D1AA;
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+	border: none;
+}
+
+#login-or-demo {
+	font-family: 'Poiret One', cursive;
+}
+
+.alt-link {
+	font-weight: bold;
+	color: 
+}
+
+#demo {
+	margin: 8px;
+}
 
 
 
