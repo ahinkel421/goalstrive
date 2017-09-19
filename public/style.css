@@ -1,0 +1,33 @@
+* {
+	box-sizing: border-box;
+}
+
+.hidden {
+	display: none;
+}
+
+.navbar {
+	background-color: #59D1AA;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 60px;
+}
+
+.navbar-header {
+	color: #A14E3E;
+	font-family: 'Poiret One', cursive;
+	font-size: 40px;
+	position: absolute;
+	top: 7px;
+	left: 18px;
+	margin: 0px;
+	background: -webkit-linear-gradient(#E84428, #300E08);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+	
+}

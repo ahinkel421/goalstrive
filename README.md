@@ -11,7 +11,7 @@ To dos:
 6. Setup database on mLab.
 7. Fix seed-data
 
-By Thursday: 
+Finished goals: 
 1. User stories
 2. Wireframes (figma)
 3. Send 1 and 2 to Sebastian. 
