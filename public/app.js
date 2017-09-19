@@ -13,6 +13,21 @@ $(function () {
 		hideAllPages();
 		$('#homepage').removeClass('hidden');
 	});
+	$('#my-goals-link').on('click', function() {
+		hideAllPages();
+		// TODO: get goals from server
+		let numberOfGoals = 0;
+		if (numberOfGoals > 0) {
+			$('#my-destination-goals-page').removeClass('hidden');
+		}
+		else {
+			$('#no-goals').removeClass('hidden');
+		}
+	});
+	$('#create-goal-link').on('click', function() {
+		hideAllPages();
+		$('#new-destination-goal-page').removeClass('hidden');
+	});
 });
 
 let pageIDs = [

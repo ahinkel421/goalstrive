@@ -35,7 +35,6 @@ Navbar Styling
 }
 
 .nav-link {
-	/*position: absolute;*/
 	display: inline;
 	color: #8A2818;
 	font-family: 'Raleway', sans-serif;
@@ -61,7 +60,7 @@ Navbar Styling
 	padding: 19px;
 }
 
-.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover {
+.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover #my-goals-link {
 	cursor: pointer;
 }
 
