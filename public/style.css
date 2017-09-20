@@ -266,21 +266,24 @@ No Goals Page Styling
 }
 
 #suggested-section {
-	
+	margin: 80px 0 250px 0;
 }
 
 .suggested-goals {
 	display: inline-block;
-	line-height: 180%;
+	line-height: 200%;
 	list-style: none;
+	font-size: 20px;
 }
 
 #ideas-message {
-	font-size: 25px;
+	font-size: 30px;
 }
 
 .quote {
 	font-size: 25px;
+	width: 70%;
+	margin: 0 auto;
 }
 
 
