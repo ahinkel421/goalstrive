@@ -28,7 +28,7 @@ $(function () {
 			$('#no-goals').removeClass('hidden');
 		}
 	});
-	$('#create-goal-link').on('click', function() {
+	$('#create-goal-button').on('click', function() {
 		hideAllPages();
 		$('#new-destination-goal-page').removeClass('hidden');
 	});

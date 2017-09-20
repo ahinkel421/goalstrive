@@ -243,7 +243,45 @@ No Goals Page Styling
 =====================
 */
 
+.grey-text {
+	color: #9F9E9E;
+}
 
+#no-goals {
+	padding-top: 100px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.destination-goals-header {
+	font-size: 55px;
+	font-weight: normal;
+	margin: 50px;
+}
+
+#no-goals-message {
+	width: 60%;
+	margin: 40px auto;
+	font-size: 20px;
+}
+
+#suggested-section {
+	
+}
+
+.suggested-goals {
+	display: inline-block;
+	line-height: 180%;
+	list-style: none;
+}
+
+#ideas-message {
+	font-size: 25px;
+}
+
+.quote {
+	font-size: 25px;
+}
 
 
 
