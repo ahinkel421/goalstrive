@@ -1,3 +1,10 @@
+/*
+===============
+General Styling
+===============
+*/
+
+
 * {
 	box-sizing: border-box;
 }
@@ -20,6 +27,31 @@
 	background: -webkit-linear-gradient(#E84428, #300E08);
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
+}
+
+.button {
+	margin-bottom: 20px;
+	width: 200px;
+	height: 45px;
+	color: #C6FFEC;
+	background-color: #59D1AA;
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+	border: none;
+}
+
+.quote {
+	font-size: 25px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.grey-text {
+	color: #9F9E9E;
+}
+
+.button:hover {
+	color: #A7F7DB;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -166,21 +198,6 @@ Homepage Styling
 	line-height: 180%;
 }
 
-.button {
-	margin-bottom: 20px;
-	width: 200px;
-	height: 45px;
-	color: #C6FFEC;
-	background-color: #59D1AA;
-	font-size: 18px;
-	font-family: 'Raleway', sans-serif;
-	border: none;
-}
-
-#get-started-button:hover {
-	color: #A7F7DB;
-}
-
 #login-or-demo {
 	font-family: 'Poiret One', cursive;
 }
@@ -212,6 +229,7 @@ Sign Up/Log In Page Styling
 ==================
 */
 
+
 .auth-box {
 	border: 3px solid #59D1AA;
 	border-radius: 5px;
@@ -219,6 +237,7 @@ Sign Up/Log In Page Styling
 	margin: 0 auto;
 	height: 450px;
 	padding: 15px 0;
+	box-shadow: 0 5px 10px -2px gray;
 }
 
 .auth-box-header {
@@ -243,9 +262,6 @@ No Goals Page Styling
 =====================
 */
 
-.grey-text {
-	color: #9F9E9E;
-}
 
 #no-goals {
 	padding-top: 100px;
@@ -261,17 +277,17 @@ No Goals Page Styling
 
 #no-goals-message {
 	width: 60%;
-	margin: 40px auto;
+	margin: 40px auto 65px auto;
 	font-size: 20px;
 }
 
 #suggested-section {
-	margin: 80px 0 250px 0;
+	margin: 100px 0 250px 0;
 }
 
 .suggested-goals {
 	display: inline-block;
-	line-height: 200%;
+	line-height: 300%;
 	list-style: none;
 	font-size: 20px;
 }
@@ -280,13 +296,60 @@ No Goals Page Styling
 	font-size: 30px;
 }
 
-.quote {
-	font-size: 25px;
-	width: 70%;
-	margin: 0 auto;
+
+/*
+=================================
+New Destination Goal Form Styling
+=================================
+*/
+
+
+#new-destination-goal-page {
+	padding-top: 100px;
 }
 
+#new-goal-header {
+	font-size: 50px;
+	font-weight: normal;
+}
 
+#new-goal-box {
+	border: 2px solid #59D1AA;
+	border-radius: 5px;
+	width: 60%;
+	margin: 0 auto 115px auto;
+	height: 650px;
+	box-shadow: 0 5px 10px -2px gray;
+}
+
+#new-goal-form {
+	margin: 60px auto;
+	padding: 20px;
+}
+
+.new-goal-label {
+	font-size: 25px;
+}
+
+.goal-info {
+	display: block;
+	margin: 20px auto 40px auto;
+	height: 40px;
+	width: 60%;
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	padding-left: 10px;
+}
+
+#description-input {
+	height: 78px;
+	resize: none;
+}
+
+#submit-new-goal-button {
+	width: 250px;
+	height: 60px;
+}
 
 
 
