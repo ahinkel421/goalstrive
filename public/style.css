@@ -93,7 +93,7 @@ Navbar Styling
 	padding: 19px;
 }
 
-.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover, #get-started-button:hover, #my-goals-link:hover, .alt-link:hover {
+.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover, .button:hover, #my-goals-link:hover, .alt-link:hover {
 	cursor: pointer;
 }
 
@@ -208,7 +208,7 @@ Homepage Styling
 
 /*
 ==================
-Sign Up Page Styling
+Sign Up/Log In Page Styling
 ==================
 */
 
@@ -235,6 +235,15 @@ Sign Up Page Styling
 	font-family: 'Raleway', sans-serif;
 	padding-left: 10px;
 }
+
+
+/*
+=====================
+No Goals Page Styling
+=====================
+*/
+
+
 
 
 

@@ -2,11 +2,15 @@ $(function () {
 	$('.get-started').on('click', function() {
 		hideAllPages();
 		$('#sign-up-page').removeClass('hidden');
+		// $('#homepage').fadeOut('slow', function() {
+		// 	$('#sign-up-page').fadeIn('slow');
+		// });
 	});
 
 	$('.login-link-js').on('click', function() {
 		hideAllPages();
 		$('#log-in-page').removeClass('hidden');
+
 	});
 
 	$('.home-link').on('click', function() {
@@ -40,7 +44,7 @@ let pageIDs = [
 ];
 
 function hideAllPages() {
-	for(let i = 0; i <pageIDs.length; i++){
+	for(let i = 0; i < pageIDs.length; i++){
 		let id = pageIDs[i];
 		$('#' + id).addClass('hidden');
 	}
