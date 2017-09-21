@@ -269,7 +269,7 @@ No Goals Page Styling
 	margin: 0 auto;
 }
 
-.destination-goals-header {
+#no-destination-goals-header {
 	font-size: 55px;
 	font-weight: normal;
 	margin: 50px;
@@ -350,6 +350,34 @@ New Destination Goal Form Styling
 	width: 250px;
 	height: 60px;
 }
+
+
+/*
+=================================
+My Destination Goals Page Styling
+=================================
+*/
+
+
+#my-destination-goals-page {
+	width: 85%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#my-destination-goals-header {
+	font-size: 55px;
+	font-weight: normal;
+	margin: 0 0 60px 0;
+}
+
+.destination-goal {
+	color: #59D1AA;
+	font-size: 45px;
+	margin-left: 40px;
+}
+
+
 
 
 
