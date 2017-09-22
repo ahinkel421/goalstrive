@@ -399,7 +399,21 @@ My Destination Goals Page Styling
 
 .dropdown-arrow {
 	float: right;
-	margin-top: 22px;
+	margin-top: 15px;
+	font-size: 30px;
+}
+
+.dropdown-arrow:hover {
+	cursor: pointer;
+}
+
+.destination-goal-description {
+	margin: 40px auto 45px auto;
+	text-align: center;
+	width: 70%;
+	padding: 20px;
+	box-shadow: 0 5px 15px -2px gray;
+	border-radius: 10px;
 }
 
 
