@@ -10,13 +10,13 @@ $(function () {
 	$('.login-link-js').on('click', function() {
 		hideAllPages();
 		$('#log-in-page').removeClass('hidden');
-
 	});
 
 	$('.home-link').on('click', function() {
 		hideAllPages();
 		$('#homepage').removeClass('hidden');
 	});
+
 	$('#my-goals-link').on('click', function() {
 		hideAllPages();
 		// TODO: get goals from server
@@ -28,6 +28,7 @@ $(function () {
 			$('#no-goals').removeClass('hidden');
 		}
 	});
+	
 	$('#create-goal-button').on('click', function() {
 		hideAllPages();
 		$('#new-destination-goal-page').removeClass('hidden');

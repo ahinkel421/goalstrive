@@ -263,6 +263,10 @@ No Goals Page Styling
 */
 
 
+#goals-list {
+	text-align: left;
+}
+
 #no-goals {
 	padding-top: 100px;
 	width: 90%;
@@ -288,8 +292,18 @@ No Goals Page Styling
 .suggested-goals {
 	display: inline-block;
 	line-height: 300%;
-	list-style: none;
+	list-style: ;
 	font-size: 20px;
+	text-align: left;
+	margin-right: 5%;
+	margin-left: 10%;
+	list-style-type: none;
+}
+
+.suggested-goals li:before {
+  content: '\2014';
+  position: absolute;
+  margin-left: -20px;
 }
 
 #ideas-message {
@@ -373,8 +387,19 @@ My Destination Goals Page Styling
 
 .destination-goal {
 	color: #59D1AA;
-	font-size: 45px;
-	margin-left: 40px;
+	font-size: 40px;
+	margin: 0 20px 0 40px;
+	display: inline-block;
+}
+
+.eta {
+	font-size: 30px;
+	color: #ABABAB;
+}
+
+.dropdown-arrow {
+	float: right;
+	margin-top: 22px;
 }
 
 
