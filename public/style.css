@@ -408,13 +408,46 @@ My Destination Goals Page Styling
 }
 
 .destination-goal-description {
-	margin: 40px auto 45px auto;
+	margin: 40px auto 60px auto;
 	text-align: center;
 	width: 70%;
 	padding: 20px;
-	box-shadow: 0 5px 15px -2px gray;
+	box-shadow: 0 5px 14px -2px gray;
 	border-radius: 10px;
 }
+
+#checkpoints-header {
+	font-size: 40px;
+	font-weight: normal;
+	margin: 0 20px 40px 80px;
+}
+
+#checkpoint-goals-list {
+	margin: 0 20px 40px 80px;
+	font-size: 22px;
+	list-style-position: inside;
+	list-style: none;
+	border-left: solid 5px #59D1AA;
+	border-radius: 10px;
+	padding-left: 20px;
+}
+
+.checkpoint-goal {
+	margin: 60px 0 60px 0;
+}
+
+.checkpoint-goal::before {
+	content: "•    ";
+	color: #59D1AA;
+	/*font-size: 35px;*/
+}
+
+#new-checkpoint {
+	border: none;
+	font-size: 22px;
+}
+
+
 
 
 
