@@ -423,7 +423,7 @@ My Destination Goals Page Styling
 }
 
 #checkpoint-goals-list {
-	margin: 0 20px 40px 80px;
+	margin: 0 20px 80px 90px;
 	font-size: 22px;
 	list-style-position: inside;
 	list-style: none;
@@ -439,7 +439,7 @@ My Destination Goals Page Styling
 .checkpoint-goal::before {
 	content: "•    ";
 	color: #59D1AA;
-	/*font-size: 35px;*/
+	font-size: 30px;
 }
 
 #new-checkpoint {
