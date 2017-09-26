@@ -1,3 +1,5 @@
+
+
 $(function () { 
 	$('.get-started').on('click', function() {
 		hideAllPages();

@@ -5,7 +5,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-const {Goal} = require('./models');
+const {Goal} = require('../models/goals');
 
 router.use(bodyParser.json());
 
@@ -118,4 +118,4 @@ router.use('*', function(req, res) {
 	res.status(404).json({message: 'Not Found'});
 });
 
-module.exports = router;
+module.exports = {goalsRouter:router};
