@@ -34,7 +34,7 @@ passport.use(jwtStrategy);
 
 app.use('/api/users', usersRouter);
 app.use('/api/auth', authRouter);
-app.use('api/goals', goalsRouter);
+app.use('/api/goals', goalsRouter);
 
 // A protected endpoint which needs a valid JWT to access it
 // app.get(

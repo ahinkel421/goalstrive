@@ -16,7 +16,7 @@
 		</div>
 	</nav>
 	<!-- Homepage -->
-	<div class="page hidden" id="homepage">
+	<div class="page" id="homepage">
 		<section id="introduction">
 			<h2 class="homepage-header">The web app <span class="bold">of</span> the driven, <span class="bold">by</span> the driven, <span class="bold">for</span> the driven...</h2>
 			<p class="overview">While having large aspirations to aim for is critical to personal success, it’s easy to get intimidated by these goals looming before us and never get started. With Goalstrive, we take these goals and break them down into smaller, more achievable goals. Here, we focus on the journey, not just the destination itself. Start your journey today.</p>
@@ -37,9 +37,9 @@
 		<div class="auth-box">
 			<h1 class="goalstrive-logo auth-box-header">Goalstrive</h1>
 			<h3>Get started for free now</h3>
-			<form>
-				<input class="user-info" type="text" name="username" placeholder="Username">
-				<input class="user-info" type="text" name="password" placeholder="Password">
+			<form id="sign-up-form-js">
+				<input class="user-info" type="text" autocomplete="off" name="username" placeholder="Username" id="username-js">
+				<input class="user-info" type="text" autocomplete="off" name="password" placeholder="Password" id="password-js">
 				<button class="button">Sign Up</button>
 			</form>
 			<span>Already have an account? </span><span class="alt-link login-link-js">Log In</span>
@@ -108,7 +108,7 @@
 	</div>
 
 	<!--My Destination Goals-->
-	<div class="page" id="my-destination-goals-page">
+	<div class="page hidden" id="my-destination-goals-page">
 		<h2 id="my-destination-goals-header">My Destination Goals</h2>
 		<h3 class="destination-goal">Get a job in tech</h3><span class="eta">(ETA: January 20, 2018):</span><span class="dropdown-arrow">&darr;</span>
 		<p class="destination-goal-description">I really want to get a job in tech, but I think that it is going to take some time. Considering that I will be done with the Thinkful bootcamp by early December, I’m thinking I could get a job by late January.</p>

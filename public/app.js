@@ -1,12 +1,82 @@
-
+// let state = {
+// 	username: '',
+// 	password: '',
+// 	signedIn: false
+// }
 
 $(function () { 
+
+	//This function should make a request to add a new user to the DB
+	//Currently getting a 422 (Unprocessable Entity) Error
+	function handleSignup(username, password) {
+		let userData = {
+			username: username,
+			password: password
+		};
+
+		$.ajax({
+			url: "http://localhost:8080/api/users/",
+			type: "POST",
+			data: userData,
+			dataType: "json",
+			success:function(data){
+				console.log("yay! things worked")
+			}
+		});
+	}
+
+	$('#sign-up-form-js').submit(function(event) {
+		event.preventDefault();
+		let username = $('#username-js').val();
+		let password = $('#password-js').val();
+		handleSignup(username, password);
+	});
+
+	// function handleSignup(state) {
+	// 	let userData = {
+	// 		format: 'json',
+	// 		username: state.username,
+	// 		password: state.password
+	// 	}
+
+	// 	$.ajax({
+	// 		url: "/api/users",
+	// 		type: "POST",
+	// 		data: userData,
+	// 		dataType: 'json',
+	// 		success: function(data) {
+	// 			console.log('success!');
+	// 		}
+	// 	});
+	// }
+
+	// $('#sign-up-form-js').submit(function(event) {
+	// 	event.preventDefault();
+	// 	state.username = $('#username-js').val();
+	// 	state.password = $('#password-js').val();
+	// 	handleSignup(state);
+	// });
+
+	function handleLogin(username, password) {
+		let userData = {
+			username: username,
+			password: password
+		};
+
+		$.ajax({
+			url: "http://localhost:8080/api/auth/login",
+			type: "POST",
+			data: userData,
+			dataType: "json",
+			success:function(data){
+				console.log("yay! things worked")
+			}
+		});
+	}
+
 	$('.get-started').on('click', function() {
 		hideAllPages();
 		$('#sign-up-page').removeClass('hidden');
-		// $('#homepage').fadeOut('slow', function() {
-		// 	$('#sign-up-page').fadeIn('slow');
-		// });
 	});
 
 	$('.login-link-js').on('click', function() {
