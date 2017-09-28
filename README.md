@@ -9,7 +9,8 @@ To dos:
 4. If logged in, "log in" and "get started" go away.
 5. Create function to create new goals when posted in new dest goal page.
 6. Enable adding checkpoint goals.
-7. Get "Log Out" button working
+7. Get "Log Out" button working.
+8. Fix authorization (Currently able to Log In without entering any credentials).
 
 Once app is functioning To dos:
 
