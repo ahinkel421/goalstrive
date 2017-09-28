@@ -10,7 +10,8 @@
 	<nav class="navbar">
 		<h1 class="navbar-header home-link goalstrive-logo">Goalstrive</h1>
 		<div class="navbar-links">
-			<h3 class="nav-link" id="my-goals-link">My Goals</h3>
+			<h3 class="nav-link hidden" id="my-goals-link">My Goals</h3>
+			<h3 class="nav-link hidden" id="logout-nav-link">Log Out</h3>
 			<h3 class="nav-link login-link-js" id="login-nav-link">Log In</h3>
 			<h3 class="nav-link get-started" id="get-started-link">Get Started</h3>
 		</div>
@@ -38,8 +39,8 @@
 			<h1 class="goalstrive-logo auth-box-header">Goalstrive</h1>
 			<h3>Get started for free now</h3>
 			<form id="sign-up-form-js">
-				<input class="user-info" type="text" autocomplete="off" name="username" placeholder="Username" id="username-js">
-				<input class="user-info" type="text" autocomplete="off" name="password" placeholder="Password" id="password-js">
+				<input class="user-info username-js" type="text" autocomplete="off" name="username" placeholder="Username">
+				<input class="user-info password-js" type="password" autocomplete="off" name="password" placeholder="Password">
 				<button class="button">Sign Up</button>
 			</form>
 			<span>Already have an account? </span><span class="alt-link login-link-js">Log In</span>
@@ -51,9 +52,9 @@
 		<div class="auth-box">
 			<h1 class="goalstrive-logo auth-box-header">Goalstrive</h1>
 			<h3>Log in below</h3>
-			<form>
-				<input class="user-info" type="text" name="username" placeholder="Username">
-				<input class="user-info" type="text" name="password" placeholder="Password">
+			<form id="login-form-js">
+				<input class="user-info username-js" type="text" autocomplete="off" name="username" placeholder="Username">
+				<input class="user-info password-js" type="password" autocomplete="off" name="password" placeholder="Password">
 				<button class="button">Log In</button>
 			</form>
 			<span>Don't have an account? </span><span class="get-started alt-link">Sign Up</span>

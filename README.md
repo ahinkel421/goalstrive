@@ -3,21 +3,25 @@ Goalstrive (Capstone Project 2)
 
 To dos:
 
-1. Add JWT.
-2. Do front end section.
-3. Add sub goals.
-4. Add tests for routes.
-5. Add CI and Heroku.
-6. Setup database on mLab.
-7. Fix seed-data
+1. Get JWT working on client side (handleSignup function)
+2. Delete users..?
+3. Make "my goals" link only visible if logged in.
+4. If logged in, "log in" and "get started" go away.
+5. Create function to create new goals when posted in new dest goal page.
+6. Enable adding checkpoint goals.
+7. Get "Log Out" button working
+
+Once app is functioning To dos:
+
+1. Add tests for routes
+2. Add CI and Heroku
+3. Setup database on mLab
+4. Generate random quotes 
+5. Expand on what the app is about on first page
+6. Make responsive
+7. Fade from page to page
 
 Finished goals: 
-1. User stories
-2. Wireframes (figma)
-3. Send 1 and 2 to Sebastian. 
-4. Mark up screens (use class hidded/display none)
-	-Homescreen(Introduction to app with links to different pages.)
-	-Sign up form page
-	-Login page
-	-View current goals page (delete button, edit/update button.)
-	-Create new goals page.
+
+1. Get handleLogin function working (kind of)
+2. Get Free Demo button working

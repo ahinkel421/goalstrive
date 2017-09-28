@@ -1,10 +1,26 @@
-// let state = {
-// 	username: '',
-// 	password: '',
-// 	signedIn: false
-// }
+let state = {
+	loggedIn: false
+}
+
+let pageIDs = [
+	"homepage",
+	"sign-up-page",
+	"log-in-page",
+	"no-goals",
+	"new-destination-goal-page",
+	"my-destination-goals-page"
+];
 
 $(function () { 
+
+	//Functions/Function Stubs
+
+	function hideAllPages() {
+		for(let i = 0; i < pageIDs.length; i++){
+			let id = pageIDs[i];
+			$('#' + id).addClass('hidden');
+		}
+	}
 
 	//This function should make a request to add a new user to the DB
 	//Currently getting a 422 (Unprocessable Entity) Error
@@ -15,47 +31,23 @@ $(function () {
 		};
 
 		$.ajax({
-			url: "http://localhost:8080/api/users/",
-			type: "POST",
+			url: "http://localhost:8080/api/users",
+			type: "Post",
 			data: userData,
 			dataType: "json",
 			success:function(data){
-				console.log("yay! things worked")
+				console.log("yay! things worked");
+				state.loggedIn = true;
 			}
 		});
 	}
 
 	$('#sign-up-form-js').submit(function(event) {
 		event.preventDefault();
-		let username = $('#username-js').val();
-		let password = $('#password-js').val();
+		let username = $('.username-js').val();
+		let password = $('.password-js').val();
 		handleSignup(username, password);
 	});
-
-	// function handleSignup(state) {
-	// 	let userData = {
-	// 		format: 'json',
-	// 		username: state.username,
-	// 		password: state.password
-	// 	}
-
-	// 	$.ajax({
-	// 		url: "/api/users",
-	// 		type: "POST",
-	// 		data: userData,
-	// 		dataType: 'json',
-	// 		success: function(data) {
-	// 			console.log('success!');
-	// 		}
-	// 	});
-	// }
-
-	// $('#sign-up-form-js').submit(function(event) {
-	// 	event.preventDefault();
-	// 	state.username = $('#username-js').val();
-	// 	state.password = $('#password-js').val();
-	// 	handleSignup(state);
-	// });
 
 	function handleLogin(username, password) {
 		let userData = {
@@ -65,14 +57,36 @@ $(function () {
 
 		$.ajax({
 			url: "http://localhost:8080/api/auth/login",
-			type: "POST",
+			type: "Post",
 			data: userData,
 			dataType: "json",
 			success:function(data){
-				console.log("yay! things worked")
+				console.log("yay! things worked");
+				state.loggedIn = true;
+				handleHeaderLinks();
 			}
 		});
 	}
+
+	$('#login-form-js').submit(function(event) {
+		event.preventDefault();
+		let username = $('.username-js').val();
+		let password = $('.password-js').val();
+		handleLogin(username, password);
+	});
+
+	function handleHeaderLinks() {
+		if(state.loggedIn === true) {
+			$('.nav-link').addClass('hidden');
+			$('#my-goals-link, #logout-nav-link').removeClass('hidden');
+		}
+		else {
+			$('#my-goals-link').addClass('hidden');
+			$('.nav-link').removeClass('hidden');
+		}
+	}
+
+	//Event Listeners 
 
 	$('.get-started').on('click', function() {
 		hideAllPages();
@@ -82,6 +96,11 @@ $(function () {
 	$('.login-link-js').on('click', function() {
 		hideAllPages();
 		$('#log-in-page').removeClass('hidden');
+	});
+
+	$('#demo').on('click', function() {
+		hideAllPages();
+		$('#no-goals').removeClass('hidden');
 	});
 
 	$('.home-link').on('click', function() {
@@ -106,19 +125,3 @@ $(function () {
 		$('#new-destination-goal-page').removeClass('hidden');
 	});
 });
-
-let pageIDs = [
-	"homepage",
-	"sign-up-page",
-	"log-in-page",
-	"no-goals",
-	"new-destination-goal-page",
-	"my-destination-goals-page"
-];
-
-function hideAllPages() {
-	for(let i = 0; i < pageIDs.length; i++){
-		let id = pageIDs[i];
-		$('#' + id).addClass('hidden');
-	}
-}

@@ -9,10 +9,6 @@ General Styling
 	box-sizing: border-box;
 }
 
-.hidden {
-	display: none;
-}
-
 .page {
 	text-align: center;
 	padding-top: 150px;
@@ -125,7 +121,7 @@ Navbar Styling
 	padding: 19px;
 }
 
-.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover, .button:hover, #my-goals-link:hover, .alt-link:hover {
+.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover, .button:hover, #my-goals-link:hover, .alt-link:hover, #logout-nav-link {
 	cursor: pointer;
 }
 
@@ -136,6 +132,10 @@ Navbar Styling
 #get-started-link:hover {
 	color: #A7F7DB;
 	border-color: #A7F7DB;
+}
+
+.hidden {
+	display: none;
 }
 
 
