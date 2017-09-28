@@ -11,6 +11,8 @@ To dos:
 6. Enable adding checkpoint goals.
 7. Get "Log Out" button working.
 8. Fix authorization (Currently able to Log In without entering any credentials).
+9. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info"
+10. On add goal submit, append input.vals() to "goals-container"
 
 Once app is functioning To dos:
 

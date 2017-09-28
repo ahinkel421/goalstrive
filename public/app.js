@@ -124,4 +124,14 @@ $(function () {
 		hideAllPages();
 		$('#new-destination-goal-page').removeClass('hidden');
 	});
+
+	$('#new-goal-form').submit(function(event) {
+		event.preventDefault();
+		$('.goals-container').append('#goal-name-js').val();
+	});
+
 });
+
+
+
+
