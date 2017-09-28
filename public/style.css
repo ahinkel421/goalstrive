@@ -9,6 +9,10 @@ General Styling
 	box-sizing: border-box;
 }
 
+body {
+	margin-bottom: 60px;
+}
+
 .page {
 	text-align: center;
 	padding-top: 150px;
