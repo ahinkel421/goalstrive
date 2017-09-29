@@ -70,9 +70,25 @@ $(function () {
 		let destination = $('#goal-name-js').val();
 		let eta = $('#eta-input-js').val();
 		let description = $('#description-input').val();
-		handleNewDestinationGoal(destination, eta, description);
-		hideAllPages();
-		$('#my-destination-goals-page').removeClass('hidden');
+		if (destination === "" || eta === "" || description === "") {
+			alert("Please fill out all required fields");
+			return;
+		}
+		else {
+			handleNewDestinationGoal(destination, eta, description);
+			hideAllPages();
+			$('#my-destination-goals-page').removeClass('hidden');
+		}
+	});
+
+	//Why isn't this working? Works with div but not with class.
+
+	$('.goal-and-eta-box').on('click', '.dropdown-arrow', function(event) {
+		event.preventDefault();
+		console.log('hi');
+		$('.collapsable-goal-info').addClass('hidden');
+		$(this).addClass('hidden');
+		$(this).parent().append('<span class="dropdown-arrow">&rarr;</span>');
 	});
   
 });
@@ -147,7 +163,7 @@ function handleNewDestinationGoal(destination, eta, description) {
 		success: function(data) {
 			console.log('Woohoo! New goal created!');
 			console.log(data);
-			$('.goals-container').append(`<div class="goal-and-eta-box"><h3 class="destination-goal">${destination}</h3><span class="eta">(ETA: ${eta}):</span><span class="dropdown-arrow">&darr;</span></div><div class="collapsable-goal-info">
+			$('.goals-container').append(`<div class="goal-and-eta-box"><h3 class="destination-goal">${destination}</h3><span class="eta">(ETA: ${eta}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
 				<p class="destination-goal-description">${description}</p>
 				<h4 id="checkpoints-header">Checkpoints</h4>
 				<ul id="checkpoint-goals-list">
