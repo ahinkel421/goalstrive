@@ -389,6 +389,10 @@ My Destination Goals Page Styling
 	margin: 0 0 60px 0;
 }
 
+.goal-and-eta-box {
+	margin-top: 50px;
+}
+
 .destination-goal {
 	color: #59D1AA;
 	font-size: 40px;

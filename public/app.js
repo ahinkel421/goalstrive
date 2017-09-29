@@ -71,6 +71,8 @@ $(function () {
 		let eta = $('#eta-input-js').val();
 		let description = $('#description-input').val();
 		handleNewDestinationGoal(destination, eta, description);
+		hideAllPages();
+		$('#my-destination-goals-page').removeClass('hidden');
 	});
   
 });
@@ -145,6 +147,7 @@ function handleNewDestinationGoal(destination, eta, description) {
 		success: function(data) {
 			console.log('Woohoo! New goal created!');
 			console.log(data);
+			$('.goals-container').append(`<div class="goal-and-eta-box"><h3 class="destination-goal">${destination}</h3><span class="eta">(ETA: ${eta}):</span><span class="dropdown-arrow">&darr;</span></div>`);
 		},
 		error: function(errorData) {
 			console.log("something went wrong...")
