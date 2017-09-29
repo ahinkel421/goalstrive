@@ -147,7 +147,13 @@ function handleNewDestinationGoal(destination, eta, description) {
 		success: function(data) {
 			console.log('Woohoo! New goal created!');
 			console.log(data);
-			$('.goals-container').append(`<div class="goal-and-eta-box"><h3 class="destination-goal">${destination}</h3><span class="eta">(ETA: ${eta}):</span><span class="dropdown-arrow">&darr;</span></div>`);
+			$('.goals-container').append(`<div class="goal-and-eta-box"><h3 class="destination-goal">${destination}</h3><span class="eta">(ETA: ${eta}):</span><span class="dropdown-arrow">&darr;</span></div><div class="collapsable-goal-info">
+				<p class="destination-goal-description">${description}</p>
+				<h4 id="checkpoints-header">Checkpoints</h4>
+				<ul id="checkpoint-goals-list">
+					<li class="grey-text checkpoint-goal"><input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..."></li>
+				</ul>
+			</div>`);
 		},
 		error: function(errorData) {
 			console.log("something went wrong...")
