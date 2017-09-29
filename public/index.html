@@ -39,8 +39,8 @@
 			<h1 class="goalstrive-logo auth-box-header">Goalstrive</h1>
 			<h3>Get started for free now</h3>
 			<form id="sign-up-form-js">
-				<input class="user-info username-js" type="text" autocomplete="off" name="username" placeholder="Username">
-				<input class="user-info password-js" type="password" autocomplete="off" name="password" placeholder="Password">
+				<input id="username-js-signup" class="user-info" type="text" autocomplete="off" name="username" placeholder="Username">
+				<input id="password-js-signup" class="user-info password-js" type="password" autocomplete="off" name="password" placeholder="Password">
 				<button class="button">Sign Up</button>
 			</form>
 			<span>Already have an account? </span><span class="alt-link login-link-js">Log In</span>
@@ -48,23 +48,23 @@
 	</div>
 
 	<!-- Log-in Sheet -->
-	<div class="page hidden" id="log-in-page">	
+	<div class="page hidden" id="log-in-page">
 		<div class="auth-box">
 			<h1 class="goalstrive-logo auth-box-header">Goalstrive</h1>
 			<h3>Log in below</h3>
 			<form id="login-form-js">
-				<input class="user-info username-js" type="text" autocomplete="off" name="username" placeholder="Username">
-				<input class="user-info password-js" type="password" autocomplete="off" name="password" placeholder="Password">
+				<input id="username-js-login" class="user-info" type="text" autocomplete="off" name="username" placeholder="Username">
+				<input id="password-js-login" class="user-info" type="password" autocomplete="off" name="password" placeholder="Password">
 				<button class="button">Log In</button>
 			</form>
 			<span>Don't have an account? </span><span class="get-started alt-link">Sign Up</span>
-		</div>	
+		</div>
 	</div>
 
 	<!--No Goals Page-->
 	<div class="page hidden" id="no-goals">
 		<section>
-			<h2 id="no-destination-goals-header">My Destination Goals</h2>	
+			<h2 id="no-destination-goals-header">My Destination Goals</h2>
 			<p class="grey-text" id="no-goals-message">You currently have no destination goals set. To create a new destination goal, click the button below.</p>
 			<button class="button" id="create-goal-button">Create new goal</button>
 		</section>
@@ -108,6 +108,7 @@
 	</div>
 
 	<!--My Destination Goals-->
+
 	<div class="page" id="my-destination-goals-page">
 		<div class="goals-container">
 			<h2 id="my-destination-goals-header">My Destination Goals</h2>
@@ -123,6 +124,7 @@
 			</div>
 			<h3 class="destination-goal">Buy a car</h3><span class="eta">(ETA: May 31, 2018):</span><span class="dropdown-arrow">&rarr;</span> 
 		</div>
+
 	</div>
 
 	<footer>
@@ -134,5 +136,3 @@
 	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
-
-
