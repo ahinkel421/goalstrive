@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const goalSchema = mongoose.Schema({
-  title: {type: String, required: true},
-  dueDate: {type: Date},
+  destination: {type: String, required: true},
+  eta: {type: Date},
   description: {type: String},
   subGoals: {type: Array}
 });
@@ -10,8 +10,8 @@ const goalSchema = mongoose.Schema({
 goalSchema.methods.apiRepr = function() {
   return {
     id: this._id,
-    title: this.title,
-    dueDate: this.dueDate,
+    destination: this.destination,
+    eta: this.eta,
     description: this.description,
     subGoals: this.subGoals
   };

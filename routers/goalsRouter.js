@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-	const requiredFields = ['title', 'dueDate', 'description'];
+	const requiredFields = ['destination', 'eta', 'description'];
 	for (let i=0; i<requiredFields.length; i++) {
 		const field = requiredFields[i];
 		if (!(field in req.body)) {
@@ -40,8 +40,8 @@ router.post('/', (req, res) => {
 
 	Goal
 	.create({
-		title: req.body.title,
-		dueDate: req.body.dueDate,
+		destination: req.body.destination,
+		eta: req.body.eta,
 		description: req.body.description
 	})
 	.then(goal => res.status(201).json(goal.apiRepr()))
@@ -92,7 +92,7 @@ router.put('/:id', (req, res) => {
 	}
 
 	const updated = {};
-	const updateableFields = ['title', 'dueDate', 'description'];
+	const updateableFields = ['destination', 'eta', 'description'];
 	updateableFields.forEach(field => {
 		if (field in req.body) {
 			updated[field] = req.body[field];

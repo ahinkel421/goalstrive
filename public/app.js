@@ -137,7 +137,7 @@ function handleNewDestinationGoal(destination, eta, description) {
 	};
 
 	$.ajax({
-		url: "api/goals",
+		url: "api/goals/",
 		type: "POST",
 		data: JSON.stringify(goalData),
 		contentType: "application/json; charset=utf-8",
@@ -149,6 +149,7 @@ function handleNewDestinationGoal(destination, eta, description) {
 		error: function(errorData) {
 			console.log("something went wrong...")
 			console.log(errorData);
+			console.log(goalData);
 		}
 	});
 }
