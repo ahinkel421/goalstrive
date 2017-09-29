@@ -17,7 +17,7 @@
 		</div>
 	</nav>
 	<!-- Homepage -->
-	<div class="page" id="homepage">
+	<div class="page hidden" id="homepage">
 		<section id="introduction">
 			<h2 class="homepage-header">The web app <span class="bold">of</span> the driven, <span class="bold">by</span> the driven, <span class="bold">for</span> the driven...</h2>
 			<p class="overview">While having large aspirations to aim for is critical to personal success, it’s easy to get intimidated by these goals looming before us and never get started. With Goalstrive, we take these goals and break them down into smaller, more achievable goals. Here, we focus on the journey, not just the destination itself. Start your journey today.</p>
@@ -95,11 +95,10 @@
 		<div id="new-goal-box">
 			<form id="new-goal-form">
 				<label class="new-goal-label" for="goal-name">Destination (goal name)</label>
-				<input type="text" name="goal-name" placeholder="i.e. Get a job in tech" class="goal-info">
+				<input type="text" name="goal-name" placeholder="i.e. Get a job in tech" class="goal-info" id="goal-name-js">
 				<label class="new-goal-label" for="eta">ETA (due date)</label>
 				<input type="text" name="ETA" placeholder="i.e. January 20, 2018" class="goal-info">
 				<label class="new-goal-label" for="description-input">Description</label>
-				<!-- <input type="text" name="Description" placeholder="i.e. I really want to get a job in tech, but I think that it is going to take some time. Considering that I will be done with the Thinkful bootcamp by early December, I’m thinking I could get a job by late January." class="goal-info" id="description-input"> -->
 				<textarea class="goal-info" id="description-input" placeholder="i.e. I really want to get a job in tech by January 20th..."></textarea>
 				<button class="button" id="submit-new-goal-button">Submit</button>
 			</form>
@@ -109,17 +108,23 @@
 	</div>
 
 	<!--My Destination Goals-->
-	<div class="page hidden" id="my-destination-goals-page">
-		<h2 id="my-destination-goals-header">My Destination Goals</h2>
-		<h3 class="destination-goal">Get a job in tech</h3><span class="eta">(ETA: January 20, 2018):</span><span class="dropdown-arrow">&darr;</span>
-		<p class="destination-goal-description">I really want to get a job in tech, but I think that it is going to take some time. Considering that I will be done with the Thinkful bootcamp by early December, I’m thinking I could get a job by late January.</p>
-		<h4 id="checkpoints-header">Checkpoints</h4>
-		<ul id="checkpoint-goals-list">
-			<li class="checkpoint-goal">Finish bootcamp</li>
-			<li class="checkpoint-goal">Polish portfolio</li>
-			<li class="grey-text checkpoint-goal"><input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..."></li>
-		</ul>
-		<h3 class="destination-goal">Buy a car</h3><span class="eta">(ETA: May 31, 2018):</span><span class="dropdown-arrow">&rarr;</span>
+
+	<div class="page" id="my-destination-goals-page">
+		<div class="goals-container">
+			<h2 id="my-destination-goals-header">My Destination Goals</h2>
+			<h3 class="destination-goal">Get a job in tech</h3><span class="eta">(ETA: January 20, 2018):</span><span class="dropdown-arrow">&darr;</span>
+			<div class="collapsable-goal-info">
+				<p class="destination-goal-description">I really want to get a job in tech, but I think that it is going to take some time. Considering that I will be done with the Thinkful bootcamp by early December, I’m thinking I could get a job by late January.</p>
+				<h4 id="checkpoints-header">Checkpoints</h4>
+				<ul id="checkpoint-goals-list">
+					<li class="checkpoint-goal">Finish bootcamp</li>
+					<li class="checkpoint-goal">Polish portfolio</li>
+					<li class="grey-text checkpoint-goal"><input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..."></li>
+				</ul>
+			</div>
+			<h3 class="destination-goal">Buy a car</h3><span class="eta">(ETA: May 31, 2018):</span><span class="dropdown-arrow">&rarr;</span> 
+		</div>
+
 	</div>
 
 	<footer>
