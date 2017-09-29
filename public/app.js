@@ -64,9 +64,13 @@ $(function () {
 		hideAllPages();
 		$('#new-destination-goal-page').removeClass('hidden');
 	});
+
 	$('#new-goal-form').submit(function(event) {
 		event.preventDefault();
-		$('.goals-container').append('#goal-name-js').val();
+		let destination = $('#goal-name-js').val();
+		let eta = $('#eta-input-js').val();
+		let description = $('#description-input').val();
+		handleNewDestinationGoal(destination, eta, description);
 	});
   
 });
@@ -121,6 +125,31 @@ console.log(userData)
 			console.log(errorData)
 		},
 
+	});
+}
+
+function handleNewDestinationGoal(destination, eta, description) {
+
+	let goalData = {
+		destination: destination,
+		eta: eta,
+		description: description
+	};
+
+	$.ajax({
+		url: "api/goals",
+		type: "POST",
+		data: JSON.stringify(goalData),
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		success: function(data) {
+			console.log('Woohoo! New goal created!');
+			console.log(data);
+		},
+		error: function(errorData) {
+			console.log("something went wrong...")
+			console.log(errorData);
+		}
 	});
 }
 
