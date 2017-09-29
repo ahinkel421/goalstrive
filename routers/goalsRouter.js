@@ -1,13 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
-
-const bodyParser = require('body-parser');
-const jsonParser = bodyParser.json();
-
 const {Goal} = require('../models/goals');
-
-router.use(bodyParser.json());
 
 router.get('/', (req, res) => {
 	Goal
@@ -60,8 +54,6 @@ router.post('/', (req, res) => {
 
 
 router.delete('/:id', (req, res) => {
-
-	//edge cases
 	if(!req.body.id) {
 		res.status(400).json({error: "Please enter an id in the request body and make sure it matches the request path id."})
 	}

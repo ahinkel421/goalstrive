@@ -10,12 +10,17 @@ const {DATABASE_URL, PORT} = require('./config');
 const {usersRouter} = require('./routers/users-router'); // REGISTER USER
 const {authRouter} = require('./routers/auth-router'); // Login + refresh
 const {basicStrategy, jwtStrategy} = require('./auth/strategies');
+const bodyParser = require('body-parser');
 
 const app = express();
 const {goalsRouter} = require('./routers/goalsRouter');
 
 app.use(express.static('public'));
 app.use(morgan('common'));
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 // CORS
 app.use(function(req, res, next) {
@@ -29,7 +34,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(passport.initialize());
-passport.use(basicStrategy);
+passport.use('local', basicStrategy);
 passport.use(jwtStrategy);
 
 app.use('/api/users', usersRouter);
@@ -110,8 +115,5 @@ module.exports = {runServer, app, closeServer};
 
   //This app allows users to take their larger, milestone goals and break
   //them down into smaller achievable goals. The idea is to make those
-  //big lifetime goals seem less intimidating and more achievable by 
-  //taking them one small step at a time. 
-
-
-
+  //big lifetime goals seem less intimidating and more achievable by
+  //taking them one small step at a time.

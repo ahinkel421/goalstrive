@@ -1,18 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const passport = require('passport');
-
 const {User} = require('../models/users');
-
 const router = express.Router();
-
-const jsonParser = bodyParser.json();
 
 // Post to register a new user
 // Post to /api/users
 // REGISTER A NEW USER
-
-router.post('/', jsonParser, (req, res) => {
+router.post('/', (req, res) => {
     const requiredFields = ['username', 'password'];
     const missingField = requiredFields.find(field => !(field in req.body));
 
@@ -144,8 +138,3 @@ router.get('/', (req, res) => {
 });
 
 module.exports = {usersRouter:router};
-
-
-
-
-
