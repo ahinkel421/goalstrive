@@ -18,14 +18,14 @@ $(function () {
 		event.preventDefault();
 		let username = $('#username-js-signup').val();
 		let password = $('#password-js-signup').val();
-		handleAuth('auth/login', username, password);
+		handleAuth('users', username, password);
 	});
 
 	$('#login-form-js').submit(function(event) {
 		event.preventDefault();
 		let username = $('#username-js-login').val();
 		let password = $('#password-js-login').val();
-		handleAuth('users', username, password);
+		handleAuth('auth/login', username, password);
 	});
 
 	//Event Listeners

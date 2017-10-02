@@ -456,8 +456,15 @@ My Destination Goals Page Styling
 	font-size: 22px;
 }
 
+.individual-goal {
+	padding-bottom: 10px;
+	box-shadow: 0 4px 2px -2px #efefef;
+	border-radius: 8px;
+}
+
 #goals-page-button {
 	margin-left: 40px;
+	margin-top: 40px;
 }
 
 

@@ -14,7 +14,8 @@ To dos:
 <!-- 9. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info" -->
 10. If invalid date/eta is entered, nothing renders. Fix.
 11. Add a 'delete goals' button.
-12. 
+<!-- 12. Add a 'create new goal' button to my goals page. -->
+<!-- 13. Add faint goal divider -->
 
 
 Once app is functioning To dos:
@@ -38,3 +39,5 @@ Finished goals:
 7. Make "my goals" link only visible if logged in.
 8. If logged in, "log in" and "get started" go away.
 9. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info"
+10. Add a 'create new goal' button to my goals page.
+11. Add faint goal divider
