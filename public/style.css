@@ -259,8 +259,9 @@ Sign Up/Log In Page Styling
 	padding-left: 10px;
 }
 
-#username-taken {
+.error-message {
 	color: red;
+	font-weight: bold;
 	width: 70%;
 	margin: 10px auto;
 }

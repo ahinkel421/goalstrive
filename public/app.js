@@ -12,6 +12,12 @@ let pageIDs = [
 	"my-destination-goals-page"
 ];
 
+let errorMessageIDs = [
+	"username-taken",
+	"password-length",
+	"username-length"
+];
+
 $(function () {
 
 	$('#sign-up-form-js').submit(function(event) {
@@ -110,9 +116,29 @@ function hideAllPages() {
 	}
 }
 
-function handleUsernameTaken(username) {
-
+function hideAllErrorMessages() {
+	for(let i = 0; i < errorMessageIDs.length; i++) {
+		let id = errorMessageIDs[i];
+		$('#' + id).addClass('hidden');
+	}
 }
+
+function handleSignupErrors(errorMessage) {
+	
+	if(errorMessage === "Username already taken") {
+		hideAllErrorMessages();
+		$('#username-taken').removeClass('hidden');
+	}
+	if(errorMessage === "Must be at least 1 characters long") {
+		hideAllErrorMessages();
+		$('#username-length').removeClass('hidden');
+	}
+	if(errorMessage === "Must be at least 5 characters long") {
+		hideAllErrorMessages();
+		$('#password-length').removeClass('hidden');
+	}
+}
+
 
 function handleAuth(route, username, password) {
 
@@ -135,6 +161,7 @@ function handleAuth(route, username, password) {
 			console.log(data);
 			handleHeaderLinks();
 			showDestinationGoals();
+			hideAllErrorMessages();
 			// TODO: DON'T take me to login. BOTH SIGNUP + LOGIN SHOULD GET YOU TO YOUR GOALS
 			// Either (no-goals-page / my-goals-page)
 		},
@@ -142,9 +169,12 @@ function handleAuth(route, username, password) {
 			console.log("oh! things failed");
 			// TODO: SHOW SERVER ERRORS LIKE MUST BE 5 CHAR LONG
 			console.log(errorData);
-			let errorMessage = errorData.responseJSON.message;
-			if(errorMessage === "Username already taken") {
-				$('#username-taken').removeClass('hidden');
+			if (errorData.responseJSON === undefined) {
+				return;
+			}
+			else {
+				let errorMessage = errorData.responseJSON.message;
+				handleSignupErrors(errorMessage);
 			}
 		},
 
