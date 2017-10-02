@@ -11,7 +11,7 @@ To dos:
 6. Enable adding checkpoint goals.
 7. Get "Log Out" button working.
 8. Fix authorization (Currently able to Log In without entering any credentials).
-9. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info"
+<!-- 9. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info" -->
 10. If invalid date/eta is entered, nothing renders. Fix.
 
 
@@ -32,3 +32,4 @@ Finished goals:
 3. On add goal submit, append input.vals() to "goals-container"
 4. Get JWT working on client side (handleSignup function)
 5. Create function to create new goals when posted in new dest goal page.
+6. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info"

@@ -81,13 +81,20 @@ $(function () {
 		}
 	});
 
-	//Why isn't this working? Works when targeting div but not with class.
+	//Collapsible goals
 
 	$('.goals-container').on('click', '.down-arrow', function(event) {
 		event.preventDefault();
 		$(this).parent().parent().children('.collapsable-goal-info').addClass('hidden');
 		$(this).addClass('hidden');
-		$(this).parent().append('<span class="dropdown-arrow">&rarr;</span>');
+		$(this).parent().append('<span class="dropdown-arrow right-arrow">&rarr;</span>');
+	});
+
+	$('.goals-container').on('click', '.right-arrow', function(event) {
+		event.preventDefault();
+		$(this).parent().parent().children('.collapsable-goal-info').removeClass('hidden');
+		$(this).addClass('hidden');
+		$(this).parent().append('<span class="dropdown-arrow down-arrow">&darr;</span>');
 	});
 
 });
