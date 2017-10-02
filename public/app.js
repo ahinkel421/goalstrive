@@ -81,16 +81,15 @@ $(function () {
 		}
 	});
 
-	//Why isn't this working? Works with div but not with class.
+	//Why isn't this working? Works when targeting div but not with class.
 
-	$('.goal-and-eta-box').on('click', '.dropdown-arrow', function(event) {
+	$('.goals-container').on('click', '.down-arrow', function(event) {
 		event.preventDefault();
-		console.log('hi');
-		$('.collapsable-goal-info').addClass('hidden');
+		$(this).parent().parent().children('.collapsable-goal-info').addClass('hidden');
 		$(this).addClass('hidden');
 		$(this).parent().append('<span class="dropdown-arrow">&rarr;</span>');
 	});
-  
+
 });
 
 
@@ -113,8 +112,6 @@ function hideAllPages() {
 	}
 }
 
-//This function should make a request to add a new user to the DB
-//Currently getting a 422 (Unprocessable Entity) Error
 function handleAuth(route, username, password) {
 
 	let userData = {
@@ -123,7 +120,7 @@ function handleAuth(route, username, password) {
 	};
 
 	//api/auth/login
-console.log(userData)
+	console.log(userData)
 	$.ajax({
 		url: `/api/${route}`,
 		type: "POST",
@@ -133,7 +130,7 @@ console.log(userData)
 		success: function(data){
 			console.log("yay! things worked");
 			state.loggedIn = true;
-				console.log(data);
+			console.log(data);
 			// TODO: DON'T take me to login. BOTH SIGNUP + LOGIN SHOULD GET YOU TO YOUR GOALS
 			// Either (no-goals-page / my-goals-page)
 		},
@@ -163,13 +160,13 @@ function handleNewDestinationGoal(destination, eta, description) {
 		success: function(data) {
 			console.log('Woohoo! New goal created!');
 			console.log(data);
-			$('.goals-container').append(`<div class="goal-and-eta-box"><h3 class="destination-goal">${destination}</h3><span class="eta">(ETA: ${eta}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
+			$('.goals-container').append(`<div class="individual-goal"><div class="goal-and-eta-box"><h3 class="destination-goal">${destination}</h3><span class="eta">(ETA: ${eta}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
 				<p class="destination-goal-description">${description}</p>
 				<h4 id="checkpoints-header">Checkpoints</h4>
 				<ul id="checkpoint-goals-list">
-					<li class="grey-text checkpoint-goal"><input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..."></li>
+				<li class="grey-text checkpoint-goal"><input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..."></li>
 				</ul>
-			</div>`);
+				</div></div>`);
 		},
 		error: function(errorData) {
 			console.log("something went wrong...")
