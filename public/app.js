@@ -180,12 +180,18 @@ function showDestinationGoals() {
 	});
 }
 
+function validateDate(date) {
+	if(typeof date !== date) {
+		alert('Please enter a valid date in the "ETA" section.');
+	}
+}
+
 function formatDate(dateString) {
 	var date = new Date(dateString);
     var curr_date = date.getDate();
     var curr_month = date.getMonth() + 1; //Months are zero based
     var curr_year = date.getFullYear();
-    return curr_date + "-" + curr_month + "-" + curr_year;
+    return curr_month + "-" + curr_date + "-" + curr_year;
 }
 
 function handleNewDestinationGoal(destination, eta, description) {
@@ -211,6 +217,7 @@ function handleNewDestinationGoal(destination, eta, description) {
 			console.log("something went wrong...")
 			console.log(errorData);
 			console.log(goalData);
+			validateDate(eta);
 		}
 	});
 }
