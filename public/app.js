@@ -158,7 +158,8 @@ function showDestinationGoals() {
 				$('#my-destination-goals-page').removeClass('hidden');
 				$('.goals-container').html('');
 				for(let goal of goalsArray) {
-					$('.goals-container').append(`<div class="individual-goal"><div class="goal-and-eta-box"><h3 class="destination-goal">${goal.destination}</h3><span class="eta">(ETA: ${goal.eta}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
+					let formattedDate = formatDate(goal.eta);
+					$('.goals-container').append(`<div class="individual-goal"><div class="goal-and-eta-box"><h3 class="destination-goal">${goal.destination}</h3><span class="eta">(ETA: ${formattedDate}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
 				<p class="destination-goal-description">${goal.description}</p>
 				<h4 id="checkpoints-header">Checkpoints</h4>
 				<ul id="checkpoint-goals-list">
@@ -177,6 +178,14 @@ function showDestinationGoals() {
 			console.log(errorData)
 		},
 	});
+}
+
+function formatDate(dateString) {
+	var date = new Date(dateString);
+    var curr_date = date.getDate();
+    var curr_month = date.getMonth() + 1; //Months are zero based
+    var curr_year = date.getFullYear();
+    return curr_date + "-" + curr_month + "-" + curr_year;
 }
 
 function handleNewDestinationGoal(destination, eta, description) {
