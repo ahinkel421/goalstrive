@@ -5,14 +5,16 @@ To dos:
 
 <!-- 1. Get JWT working on client side (handleSignup function) -->
 2. Delete users..?
-3. Make "my goals" link only visible if logged in.
-4. If logged in, "log in" and "get started" go away.
+<!-- 3. Make "my goals" link only visible if logged in. -->
+<!-- 4. If logged in, "log in" and "get started" go away. -->
 <!-- 5. Create function to create new goals when posted in new dest goal page. -->
 6. Enable adding checkpoint goals.
 7. Get "Log Out" button working.
-8. Fix authorization (Currently able to Log In without entering any credentials).
+<!-- 8. Fix authorization (Currently able to Log In without entering any credentials). -->
 <!-- 9. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info" -->
 10. If invalid date/eta is entered, nothing renders. Fix.
+11. Add a 'delete goals' button.
+12. 
 
 
 Once app is functioning To dos:
@@ -32,4 +34,7 @@ Finished goals:
 3. On add goal submit, append input.vals() to "goals-container"
 4. Get JWT working on client side (handleSignup function)
 5. Create function to create new goals when posted in new dest goal page.
-6. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info"
+6. Fix authorization (Currently able to Log In without entering any credentials).
+7. Make "my goals" link only visible if logged in.
+8. If logged in, "log in" and "get started" go away.
+9. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info"

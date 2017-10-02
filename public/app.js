@@ -1,5 +1,6 @@
 let state = {
-	loggedIn: false
+	loggedIn: false,
+	numberOfGoals: 0
 }
 
 let pageIDs = [
@@ -51,8 +52,7 @@ $(function () {
 	$('#my-goals-link').on('click', function() {
 		hideAllPages();
 		// TODO: get goals from server
-		let numberOfGoals = 0;
-		if (numberOfGoals > 0) {
+		if (state.numberOfGoals > 0) {
 			$('#my-destination-goals-page').removeClass('hidden');
 		}
 		else {
@@ -138,6 +138,15 @@ function handleAuth(route, username, password) {
 			console.log("yay! things worked");
 			state.loggedIn = true;
 			console.log(data);
+			hideAllPages();
+			handleHeaderLinks();
+
+			if (state.numberOfGoals > 0) {
+				$('#my-destination-goals-page').removeClass('hidden');
+			}
+			else {
+				$('#no-goals').removeClass('hidden');
+			}
 			// TODO: DON'T take me to login. BOTH SIGNUP + LOGIN SHOULD GET YOU TO YOUR GOALS
 			// Either (no-goals-page / my-goals-page)
 		},
