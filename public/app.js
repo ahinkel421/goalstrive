@@ -50,14 +50,7 @@ $(function () {
 	});
 
 	$('#my-goals-link').on('click', function() {
-		hideAllPages();
-		// TODO: get goals from server
-		if (state.numberOfGoals > 0) {
-			$('#my-destination-goals-page').removeClass('hidden');
-		}
-		else {
-			$('#no-goals').removeClass('hidden');
-		}
+		showDestinationGoals();
 	});
 
 	$('.create-goal-button').on('click', function() {
@@ -76,8 +69,6 @@ $(function () {
 		}
 		else {
 			handleNewDestinationGoal(destination, eta, description);
-			hideAllPages();
-			$('#my-destination-goals-page').removeClass('hidden');
 		}
 	});
 
@@ -138,15 +129,8 @@ function handleAuth(route, username, password) {
 			console.log("yay! things worked");
 			state.loggedIn = true;
 			console.log(data);
-			hideAllPages();
 			handleHeaderLinks();
-
-			if (state.numberOfGoals > 0) {
-				$('#my-destination-goals-page').removeClass('hidden');
-			}
-			else {
-				$('#no-goals').removeClass('hidden');
-			}
+			showDestinationGoals();
 			// TODO: DON'T take me to login. BOTH SIGNUP + LOGIN SHOULD GET YOU TO YOUR GOALS
 			// Either (no-goals-page / my-goals-page)
 		},
@@ -156,6 +140,42 @@ function handleAuth(route, username, password) {
 			console.log(errorData)
 		},
 
+	});
+}
+
+function showDestinationGoals() {
+	hideAllPages();
+
+	$.ajax({
+		url: `/api/goals`,
+		type: "GET",
+		dataType: "json",
+		success: function(goalsArray){
+			console.log("yay! We have our goals."); 
+			console.log(goalsArray);
+
+			if (goalsArray.length > 0) {
+				$('#my-destination-goals-page').removeClass('hidden');
+				$('.goals-container').html('');
+				for(let goal of goalsArray) {
+					$('.goals-container').append(`<div class="individual-goal"><div class="goal-and-eta-box"><h3 class="destination-goal">${goal.destination}</h3><span class="eta">(ETA: ${goal.eta}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
+				<p class="destination-goal-description">${goal.description}</p>
+				<h4 id="checkpoints-header">Checkpoints</h4>
+				<ul id="checkpoint-goals-list">
+				<li class="grey-text checkpoint-goal"><input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..."></li>
+				</ul>
+				</div></div>`);
+				}
+
+			}
+			else {
+				$('#no-goals').removeClass('hidden');
+			}
+		},
+		error: function(errorData){
+			console.log("oh! things failed");
+			console.log(errorData)
+		},
 	});
 }
 
@@ -176,13 +196,7 @@ function handleNewDestinationGoal(destination, eta, description) {
 		success: function(data) {
 			console.log('Woohoo! New goal created!');
 			console.log(data);
-			$('.goals-container').append(`<div class="individual-goal"><div class="goal-and-eta-box"><h3 class="destination-goal">${destination}</h3><span class="eta">(ETA: ${eta}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
-				<p class="destination-goal-description">${description}</p>
-				<h4 id="checkpoints-header">Checkpoints</h4>
-				<ul id="checkpoint-goals-list">
-				<li class="grey-text checkpoint-goal"><input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..."></li>
-				</ul>
-				</div></div>`);
+			showDestinationGoals();
 		},
 		error: function(errorData) {
 			console.log("something went wrong...")

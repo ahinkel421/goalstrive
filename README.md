@@ -16,6 +16,9 @@ To dos:
 11. Add a 'delete goals' button.
 <!-- 12. Add a 'create new goal' button to my goals page. -->
 <!-- 13. Add faint goal divider -->
+14. Add alert if username is taken/log in invalid.
+15. On dest goals page, explain checkpoint goals
+16. Add user id property to goals
 
 
 Once app is functioning To dos:
