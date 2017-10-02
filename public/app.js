@@ -90,7 +90,7 @@ $(function () {
 
 });
 
-
+//Functions
 
 function handleHeaderLinks() {
 	if(state.loggedIn === true) {
@@ -108,6 +108,10 @@ function hideAllPages() {
 		let id = pageIDs[i];
 		$('#' + id).addClass('hidden');
 	}
+}
+
+function handleUsernameTaken(username) {
+
 }
 
 function handleAuth(route, username, password) {
@@ -137,7 +141,11 @@ function handleAuth(route, username, password) {
 		error: function(errorData){
 			console.log("oh! things failed");
 			// TODO: SHOW SERVER ERRORS LIKE MUST BE 5 CHAR LONG
-			console.log(errorData)
+			console.log(errorData);
+			let errorMessage = errorData.responseJSON.message;
+			if(errorMessage === "Username already taken") {
+				$('#username-taken').removeClass('hidden');
+			}
 		},
 
 	});

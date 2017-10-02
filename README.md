@@ -2,7 +2,6 @@ Goalstrive (Capstone Project 2)
 ================================
 
 To dos:
-1. If invalid date/eta is entered, nothing renders. Fix.
 1. Add a 'delete goals' button. Make delete request to server.
 1. Add alert if username is taken/log in invalid.
 1. On dest goals page, explain checkpoint goals.
@@ -10,7 +9,6 @@ To dos:
 1. Enable adding checkpoint goals.
 1. Get "Log Out" button working.
 1. Add user id property to goals.
-1. When entering date with numbers (04/25/17) month and day get switched (25/04/17)
 
 Once app is functioning To dos:
 
@@ -35,3 +33,5 @@ Finished goals:
 1. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info"
 1. Add a 'create new goal' button to my goals page.
 1. Add faint goal divider
+1. When entering date with numbers (04/25/17) month and day get switched (25/04/17)
+1. If invalid date/eta is entered, nothing renders. Fix.

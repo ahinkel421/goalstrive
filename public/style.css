@@ -259,6 +259,12 @@ Sign Up/Log In Page Styling
 	padding-left: 10px;
 }
 
+#username-taken {
+	color: red;
+	width: 70%;
+	margin: 10px auto;
+}
+
 
 /*
 =====================
