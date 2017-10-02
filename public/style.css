@@ -391,6 +391,7 @@ My Destination Goals Page Styling
 
 .goal-and-eta-box {
 	margin-top: 50px;
+	margin-bottom: 60px;
 }
 
 .destination-goal {
@@ -416,7 +417,7 @@ My Destination Goals Page Styling
 }
 
 .destination-goal-description {
-	margin: 40px auto 60px auto;
+	margin: 0 auto 60px auto;
 	text-align: center;
 	width: 70%;
 	padding: 20px;
@@ -453,6 +454,10 @@ My Destination Goals Page Styling
 #new-checkpoint {
 	border: none;
 	font-size: 22px;
+}
+
+#goals-page-button {
+	margin-left: 40px;
 }
 
 

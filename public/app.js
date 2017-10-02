@@ -18,14 +18,14 @@ $(function () {
 		event.preventDefault();
 		let username = $('#username-js-signup').val();
 		let password = $('#password-js-signup').val();
-		handleAuth('users', username, password);
+		handleAuth('auth/login', username, password);
 	});
 
 	$('#login-form-js').submit(function(event) {
 		event.preventDefault();
 		let username = $('#username-js-login').val();
 		let password = $('#password-js-login').val();
-		handleAuth('auth/login', username, password);
+		handleAuth('users', username, password);
 	});
 
 	//Event Listeners
@@ -60,7 +60,7 @@ $(function () {
 		}
 	});
 
-	$('#create-goal-button').on('click', function() {
+	$('.create-goal-button').on('click', function() {
 		hideAllPages();
 		$('#new-destination-goal-page').removeClass('hidden');
 	});
