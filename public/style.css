@@ -139,7 +139,8 @@ Navbar Styling
 }
 
 .delete-goal:hover {
-	background: -webkit-linear-gradient(#c14218, #170400);
+	color: #F22112; 
+	font-weight: bold;
 }
 
 .hidden {
@@ -402,7 +403,7 @@ My Destination Goals Page Styling
 
 .goal-and-eta-box {
 	margin-top: 50px;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 }
 
 .destination-goal {
@@ -469,25 +470,9 @@ My Destination Goals Page Styling
 
 .delete-goal {
 	font-size: 13px;
-	color: red;
+	color: rgba(232, 36, 19, 0.8);
 	font-weight: normal;
 	float: right;
-
-	/*
-	padding-top: 4px;
-	text-align: center;
-	background: -webkit-linear-gradient(#ff551d, #460c01);
-	height: 25px;
-	border-radius: 10px;
-	margin: 0 auto 10px auto;
-	width: 20%;
-	*/
-
-	/*
-	background: -webkit-linear-gradient(#E84428, #300E08);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	*/
 }
 
 .individual-goal {

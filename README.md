@@ -6,6 +6,7 @@ To dos:
 1. On dest goals page, explain checkpoint goals.
 1. Have goal fade out before reloading page.
 
+1. Fix free demo
 1. Add errors for invalid goal submissions.
 1. Enable adding checkpoint goals.
 1. Get "Log Out" button working.
