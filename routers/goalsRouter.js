@@ -6,7 +6,7 @@ const passport = require('passport');
 
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 	Goal
-	.find()
+	.find({userId: req.user.id})
 	.exec()
 	.then(goals => {
 		res.json(goals.map(goal => goal.apiRepr()));
@@ -19,7 +19,7 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 
 router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
 	Goal
-	.findById(req.params.id)
+	.find({_id:req.params.id, userId: req.user.id})
 	.exec()
 	.then(goal => res.json(goal.apiRepr()))
 	.catch(err => {
@@ -29,6 +29,7 @@ router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) =>
 });
 
 router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+
 	const requiredFields = ['destination', 'eta', 'description'];
 	for (let i=0; i<requiredFields.length; i++) {
 		const field = requiredFields[i];
@@ -43,7 +44,8 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 	.create({
 		destination: req.body.destination,
 		eta: req.body.eta,
-		description: req.body.description
+		description: req.body.description,
+		userId: req.user.id
 	})
 	.then(goal => res.status(201).json(goal.apiRepr()))
 	.catch(err => {

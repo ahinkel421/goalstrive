@@ -1,6 +1,5 @@
 let state = {
 	loggedIn: false,
-	numberOfGoals: 0,
 	token:""
 }
 
@@ -54,6 +53,13 @@ $(function () {
 	$('.home-link').on('click', function() {
 		hideAllPages();
 		$('#homepage').removeClass('hidden');
+	});
+	$('#logout-nav-link').on('click', function() {
+		hideAllPages();
+		console.log("log out")
+		$('#homepage').removeClass('hidden');
+		state.loggedIn = false,
+		state.token = ""
 	});
 
 	$('#my-goals-link').on('click', function() {
@@ -172,12 +178,10 @@ function handleAuth(route, username, password) {
 		success: function(data){
 			console.log("yay! authenticated");
 			state.loggedIn = true;
-			state.token = data.authToken; // TODO: check if this works for signup.
+			state.token = data.authToken;
 			handleHeaderLinks();
 			showDestinationGoals();
 			hideAllErrorMessages();
-			// TODO: DON'T take me to login. BOTH SIGNUP + LOGIN SHOULD GET YOU TO YOUR GOALS
-			// Either (no-goals-page / my-goals-page)
 		},
 		error: function(errorData){
 			console.log("we couldn't authenticate");

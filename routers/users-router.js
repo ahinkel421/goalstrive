@@ -2,6 +2,16 @@ const express = require('express');
 const passport = require('passport');
 const {User} = require('../models/users');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+const config = require('../config');
+
+const createAuthToken = user => {
+    return jwt.sign({user}, config.JWT_SECRET, {
+        subject: user.username,
+        expiresIn: config.JWT_EXPIRY,
+        algorithm: 'HS256'
+    });
+};
 
 // Post to register a new user
 // Post to /api/users
@@ -115,7 +125,10 @@ router.post('/', (req, res) => {
             });
         })
         .then(user => {
-            return res.status(201).json(user.apiRepr());
+
+            //return res.status(201).json(user.apiRepr());
+            const authToken = createAuthToken(user.apiRepr());
+            res.json({authToken});
         })
         .catch(err => {
             // Forward validation errors on to the client, otherwise give a 500
