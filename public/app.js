@@ -78,10 +78,23 @@ $(function () {
 		}
 	});
 
+	$('.goals-container').on('click', '.delete-goal', function(event) {
+		event.preventDefault();
+		let goalID = $(this).parents('.individual-goal').attr("data-id");
+		console.log(goalID);
+		let deleteConfirmation = confirm('Are you sure?');
+		if (deleteConfirmation) {
+			handleDeleteDestinationGoal(goalID);
+		// TODO: Have goal fade out before reloading page.
+	} 
+		
+	});
+
 	//Collapsible goals
 
 	$('.goals-container').on('click', '.down-arrow', function(event) {
 		event.preventDefault();
+		// TODO: clean this up
 		$(this).parent().parent().children('.collapsable-goal-info').addClass('hidden');
 		$(this).addClass('hidden');
 		$(this).parent().append('<span class="dropdown-arrow right-arrow">&rarr;</span>');
@@ -139,7 +152,6 @@ function handleSignupErrors(errorMessage) {
 	}
 }
 
-
 function handleAuth(route, username, password) {
 
 	let userData = {
@@ -149,6 +161,7 @@ function handleAuth(route, username, password) {
 
 	//api/auth/login
 	console.log(userData)
+
 	$.ajax({
 		url: `/api/${route}`,
 		type: "POST",
@@ -177,7 +190,6 @@ function handleAuth(route, username, password) {
 				handleSignupErrors(errorMessage);
 			}
 		},
-
 	});
 }
 
@@ -261,10 +273,22 @@ function handleNewDestinationGoal(destination, eta, description) {
 
 function handleDeleteDestinationGoal(id) {
 	$.ajax({
-		url: "/api/goals/id"
-		type: "DELETE"
+		url: `/api/goals/${id}`,
+		type: "DELETE",
+		data: JSON.stringify({id: id}),
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		success: function(data) {
+			console.log(`deleted goal ${id}`);
+			showDestinationGoals();
+		},
+		error: function(errorData) {
+			console.log(errorData);
+		}
 	});
 }
+
+
 
 
 

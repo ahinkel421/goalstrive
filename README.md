@@ -2,9 +2,9 @@ Goalstrive (Capstone Project 2)
 ================================
 
 To dos:
-1. Add a 'delete goals' button. Make delete request to server.
 1. Add alert if log in invalid.
 1. On dest goals page, explain checkpoint goals.
+1. Have goal fade out before reloading page.
 
 1. Add errors for invalid goal submissions.
 1. Enable adding checkpoint goals.
@@ -12,9 +12,11 @@ To dos:
 1. Add user id property to goals.
 1. Automatically trim whitespace on signup/login
 1. Make goals updatable
+1. Add a 'delete goals' button. Make delete request to server.
 
 Once app is functioning To dos:
 
+1. Change ETA entree to calender 
 1. Add tests for routes
 1. Add CI and Heroku
 1. Setup database on mLab
