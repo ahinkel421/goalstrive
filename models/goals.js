@@ -4,7 +4,8 @@ const goalSchema = mongoose.Schema({
   destination: {type: String, required: true},
   eta: {type: Date},
   description: {type: String},
-  subGoals: {type: Array}
+  subGoals: {type: Array},
+  userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true}
 });
 
 goalSchema.methods.apiRepr = function() {
@@ -13,7 +14,8 @@ goalSchema.methods.apiRepr = function() {
     destination: this.destination,
     eta: this.eta,
     description: this.description,
-    subGoals: this.subGoals
+    subGoals: this.subGoals,
+    userId: this.userId
   };
 }
 

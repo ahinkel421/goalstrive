@@ -2,6 +2,16 @@ const express = require('express');
 const passport = require('passport');
 const {User} = require('../models/users');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+const config = require('../config');
+
+const createAuthToken = user => {
+    return jwt.sign({user}, config.JWT_SECRET, {
+        subject: user.username,
+        expiresIn: config.JWT_EXPIRY,
+        algorithm: 'HS256'
+    });
+};
 
 // Post to register a new user
 // Post to /api/users
@@ -115,7 +125,10 @@ router.post('/', (req, res) => {
             });
         })
         .then(user => {
-            return res.status(201).json(user.apiRepr());
+
+            //return res.status(201).json(user.apiRepr());
+            const authToken = createAuthToken(user.apiRepr());
+            res.json({authToken});
         })
         .catch(err => {
             // Forward validation errors on to the client, otherwise give a 500
@@ -125,16 +138,6 @@ router.post('/', (req, res) => {
             }
             res.status(500).json({code: 500, message: 'Internal server error'});
         });
-});
-
-// Never expose all your users like below in a prod application
-// we're just doing this so we have a quick way to see
-// if we're creating users. keep in mind, you can also
-// verify this in the Mongo shell.
-router.get('/', (req, res) => {
-    return User.find()
-        .then(users => res.json(users.map(user => user.apiRepr())))
-        .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
 module.exports = {usersRouter:router};

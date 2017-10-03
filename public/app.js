@@ -1,6 +1,6 @@
 let state = {
 	loggedIn: false,
-	numberOfGoals: 0
+	token:""
 }
 
 let pageIDs = [
@@ -54,6 +54,13 @@ $(function () {
 		hideAllPages();
 		$('#homepage').removeClass('hidden');
 	});
+	$('#logout-nav-link').on('click', function() {
+		hideAllPages();
+		console.log("log out")
+		$('#homepage').removeClass('hidden');
+		state.loggedIn = false,
+		state.token = ""
+	});
 
 	$('#my-goals-link').on('click', function() {
 		showDestinationGoals();
@@ -85,9 +92,9 @@ $(function () {
 		let deleteConfirmation = confirm('Are you sure?');
 		if (deleteConfirmation) {
 			handleDeleteDestinationGoal(goalID);
-		// TODO: Have goal fade out before reloading page.
-	} 
-		
+			// TODO: Have goal fade out before reloading page.
+		}
+
 	});
 
 	//Collapsible goals
@@ -137,7 +144,7 @@ function hideAllErrorMessages() {
 }
 
 function handleSignupErrors(errorMessage) {
-	
+
 	if(errorMessage === "Username already taken") {
 		hideAllErrorMessages();
 		$('#username-taken').removeClass('hidden');
@@ -169,17 +176,15 @@ function handleAuth(route, username, password) {
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function(data){
-			console.log("yay! things worked");
+			console.log("yay! authenticated");
 			state.loggedIn = true;
-			console.log(data);
+			state.token = data.authToken;
 			handleHeaderLinks();
 			showDestinationGoals();
 			hideAllErrorMessages();
-			// TODO: DON'T take me to login. BOTH SIGNUP + LOGIN SHOULD GET YOU TO YOUR GOALS
-			// Either (no-goals-page / my-goals-page)
 		},
 		error: function(errorData){
-			console.log("oh! things failed");
+			console.log("we couldn't authenticate");
 			// TODO: SHOW SERVER ERRORS LIKE MUST BE 5 CHAR LONG
 			console.log(errorData);
 			if (errorData.responseJSON === undefined) {
@@ -200,8 +205,11 @@ function showDestinationGoals() {
 		url: `/api/goals`,
 		type: "GET",
 		dataType: "json",
+		headers: {
+			"Authorization": `Bearer ${state.token}`
+		},
 		success: function(goalsArray){
-			console.log("yay! We have our goals."); 
+			console.log("yay! We have our goals.");
 			console.log(goalsArray);
 
 			if (goalsArray.length > 0) {
@@ -209,12 +217,26 @@ function showDestinationGoals() {
 				$('.goals-container').html('');
 				for(let goal of goalsArray) {
 					let formattedDate = formatDate(goal.eta);
-					$('.goals-container').append(`<div class="individual-goal" data-id=${goal.id}><div class="goal-and-eta-box"><h3 class="destination-goal">${goal.destination}</h3><span class="eta">(ETA: ${formattedDate}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
-				<p class="destination-goal-description">${goal.description}</p>
-				<h4 id="checkpoints-header">Checkpoints</h4>
-				<ul id="checkpoint-goals-list">
-				<li class="grey-text checkpoint-goal"><input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..."></li>
-				</ul><h5 class="delete-goal">Delete this destination goal</h5></div></div>`);
+					$('.goals-container').append(
+						`<div class="individual-goal" data-id=${goal.id}>
+								<div class="goal-and-eta-box">
+									<h3 class="destination-goal">${goal.destination}</h3>
+									<span class="eta">(ETA: ${formattedDate}):</span>
+
+									<span class="dropdown-arrow down-arrow">&darr;</span>
+								</div>
+								<div class="collapsable-goal-info">
+									<p class="destination-goal-description">${goal.description}</p>
+									<h4 id="checkpoints-header">Checkpoints</h4>
+									<ul id="checkpoint-goals-list">
+										<li class="grey-text checkpoint-goal">
+											<input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint...">
+										</li>
+									</ul>
+									<span class="delete-goal">Delete this destination goal</span>
+								</div>
+
+							</div>`);
 				}
 
 			}
@@ -223,24 +245,19 @@ function showDestinationGoals() {
 			}
 		},
 		error: function(errorData){
-			console.log("oh! things failed");
+			console.log("we couldn't get goals");
 			console.log(errorData)
 		},
 	});
 }
 
-function validateDate(date) {
-	if(typeof date !== date) {
-		alert('Please enter a valid date in the "ETA" section.');
-	}
-}
 
 function formatDate(dateString) {
 	var date = new Date(dateString);
-    var curr_date = date.getDate();
-    var curr_month = date.getMonth() + 1; //Months are zero based
-    var curr_year = date.getFullYear();
-    return curr_month + "-" + curr_date + "-" + curr_year;
+	var curr_date = date.getDate();
+	var curr_month = date.getMonth() + 1; //Months are zero based
+	var curr_year = date.getFullYear();
+	return curr_month + "-" + curr_date + "-" + curr_year;
 }
 
 function handleNewDestinationGoal(destination, eta, description) {
@@ -257,16 +274,21 @@ function handleNewDestinationGoal(destination, eta, description) {
 		data: JSON.stringify(goalData),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
+		headers: {
+			"Authorization": `Bearer ${state.token}`
+		},
 		success: function(data) {
 			console.log('Woohoo! New goal created!');
 			console.log(data);
 			showDestinationGoals();
 		},
 		error: function(errorData) {
-			console.log("something went wrong...")
-			console.log(errorData);
-			console.log(goalData);
-			validateDate(eta);
+			console.log("something went wrong...", errorData, goalData)
+			var parsedDate=Date.parse(eta)
+			if (!isNaN(parsedDate)==false)
+			{
+				alert('Please enter a valid date in the "ETA" section.');
+			}
 		}
 	});
 }
@@ -278,6 +300,9 @@ function handleDeleteDestinationGoal(id) {
 		data: JSON.stringify({id: id}),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
+		headers: {
+			"Authorization": `Bearer ${state.token}`
+		},
 		success: function(data) {
 			console.log(`deleted goal ${id}`);
 			showDestinationGoals();
@@ -287,12 +312,3 @@ function handleDeleteDestinationGoal(id) {
 		}
 	});
 }
-
-
-
-
-
-
-
-
-
