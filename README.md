@@ -11,6 +11,7 @@ To dos:
 1. Get "Log Out" button working.
 1. Add user id property to goals.
 1. Automatically trim whitespace on signup/login
+1. Make goals updatable
 
 Once app is functioning To dos:
 

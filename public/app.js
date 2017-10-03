@@ -197,7 +197,7 @@ function showDestinationGoals() {
 				$('.goals-container').html('');
 				for(let goal of goalsArray) {
 					let formattedDate = formatDate(goal.eta);
-					$('.goals-container').append(`<div class="individual-goal"><div class="goal-and-eta-box"><h3 class="destination-goal">${goal.destination}</h3><span class="eta">(ETA: ${formattedDate}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
+					$('.goals-container').append(`<div class="individual-goal" data-id=${goal.id}><div class="goal-and-eta-box"><h3 class="destination-goal">${goal.destination}</h3><span class="eta">(ETA: ${formattedDate}):</span><span class="dropdown-arrow down-arrow">&darr;</span></div><div class="collapsable-goal-info">
 				<p class="destination-goal-description">${goal.description}</p>
 				<h4 id="checkpoints-header">Checkpoints</h4>
 				<ul id="checkpoint-goals-list">
@@ -256,6 +256,13 @@ function handleNewDestinationGoal(destination, eta, description) {
 			console.log(goalData);
 			validateDate(eta);
 		}
+	});
+}
+
+function handleDeleteDestinationGoal(id) {
+	$.ajax({
+		url: "/api/goals/id"
+		type: "DELETE"
 	});
 }
 
