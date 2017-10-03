@@ -202,8 +202,7 @@ function showDestinationGoals() {
 				<h4 id="checkpoints-header">Checkpoints</h4>
 				<ul id="checkpoint-goals-list">
 				<li class="grey-text checkpoint-goal"><input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..."></li>
-				</ul>
-				</div></div>`);
+				</ul><h5 class="delete-goal">Delete this destination goal</h5></div></div>`);
 				}
 
 			}

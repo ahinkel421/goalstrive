@@ -463,6 +463,22 @@ My Destination Goals Page Styling
 	font-size: 22px;
 }
 
+.delete-goal {
+	width: 20%;
+	font-size: 13px;
+	height: 25px;
+	border-radius: 10px;
+	margin: 0 auto 10px auto;
+	padding-top: 4px;
+	text-align: center;
+	color: white;
+	background: -webkit-linear-gradient(#ff551d, #460c01);
+	font-weight: normal;
+	/*background: -webkit-linear-gradient(#E84428, #300E08);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;*/
+}
+
 .individual-goal {
 	padding-bottom: 10px;
 	box-shadow: 0 4px 2px -2px #efefef;

@@ -6,6 +6,7 @@ To dos:
 1. Add alert if log in invalid.
 1. On dest goals page, explain checkpoint goals.
 
+1. Add errors for invalid goal submissions.
 1. Enable adding checkpoint goals.
 1. Get "Log Out" button working.
 1. Add user id property to goals.
