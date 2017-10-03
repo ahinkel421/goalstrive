@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 const {Goal} = require('../models/goals');
+const passport = require('passport');
 
-router.get('/', (req, res) => {
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 	Goal
 	.find()
 	.exec()
@@ -16,7 +17,7 @@ router.get('/', (req, res) => {
 	});
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
 	Goal
 	.findById(req.params.id)
 	.exec()
@@ -27,7 +28,7 @@ router.get('/:id', (req, res) => {
 	});
 });
 
-router.post('/', (req, res) => {
+router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 	const requiredFields = ['destination', 'eta', 'description'];
 	for (let i=0; i<requiredFields.length; i++) {
 		const field = requiredFields[i];
@@ -53,7 +54,7 @@ router.post('/', (req, res) => {
 });
 
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
 	if(!req.body.id) {
 		res.status(400).json({error: "Please enter an id in the request body and make sure it matches the request path id."})
 	}
@@ -78,7 +79,7 @@ router.delete('/:id', (req, res) => {
 });
 
 
-router.put('/:id', (req, res) => {
+router.put('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
 
 	//edge cases
 	if(!req.body.id) {
@@ -104,10 +105,6 @@ router.put('/:id', (req, res) => {
 	.exec()
 	.then(updatedGoal => res.status(201).json(updatedGoal.apiRepr()))
 	.catch(err => res.status(500).json({error: 'Sorry, it looks like the id entered is not valid. Please try again.'}));
-});
-
-router.use('*', function(req, res) {
-	res.status(404).json({message: 'Not Found'});
 });
 
 module.exports = {goalsRouter:router};
