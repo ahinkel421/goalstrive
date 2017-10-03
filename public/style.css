@@ -125,7 +125,7 @@ Navbar Styling
 	padding: 19px;
 }
 
-.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover, .button:hover, #my-goals-link:hover, .alt-link:hover, #logout-nav-link {
+.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover, .button:hover, #my-goals-link:hover, .alt-link:hover, #logout-nav-link:hover, .delete-goal:hover {
 	cursor: pointer;
 }
 
@@ -136,6 +136,10 @@ Navbar Styling
 #get-started-link:hover {
 	color: #A7F7DB;
 	border-color: #A7F7DB;
+}
+
+.delete-goal:hover {
+	background: -webkit-linear-gradient(#c14218, #170400);
 }
 
 .hidden {
