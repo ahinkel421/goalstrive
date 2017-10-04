@@ -58,13 +58,14 @@ $(function () {
 		$('#homepage').removeClass('hidden');
 	});
 
-	//When user clickes logout, they're taken to homepage and token is taken away.
+	//When user clickes logout, they're taken to homepage, token is taken away,
+	//and navbar changes accordingly.
 	$('#logout-nav-link').on('click', function() {
 		hideAllPages();
-		console.log("log out")
 		$('#homepage').removeClass('hidden');
 		state.loggedIn = false,
 		state.token = ""
+		handleHeaderLinks();
 	});
 
 	$('#my-goals-link').on('click', function() {
@@ -129,8 +130,8 @@ function handleHeaderLinks() {
 		$('#my-goals-link, #logout-nav-link').removeClass('hidden');
 	}
 	else {
-		$('#my-goals-link').addClass('hidden');
 		$('.nav-link').removeClass('hidden');
+		$('#my-goals-link, #logout-nav-link').addClass('hidden');
 	}
 }
 
