@@ -17,7 +17,7 @@
 		</div>
 	</nav>
 	<!-- Homepage -->
-	<div class="page" id="homepage">
+	<div class="page hidden" id="homepage">
 		<section id="introduction">
 			<h2 class="homepage-header">The web app <span class="bold">of</span> the driven, <span class="bold">by</span> the driven, <span class="bold">for</span> the driven...</h2>
 			<p class="overview">While having large aspirations to aim for is critical to personal success, it’s easy to get intimidated by these goals looming before us and never get started. With Goalstrive, we take these goals and break them down into smaller, more achievable goals. Here, we focus on the journey, not just the destination itself. Start your journey today.</p>
@@ -51,7 +51,7 @@
 	</div>
 
 	<!-- Log-in Sheet -->
-	<div class="page hidden" id="log-in-page">
+	<div class="page" id="log-in-page">
 		<div class="auth-box">
 			<h1 class="goalstrive-logo auth-box-header">Goalstrive</h1>
 			<h3>Log in below</h3>
@@ -61,6 +61,8 @@
 				<button class="button">Log In</button>
 			</form>
 			<span>Don't have an account? </span><span class="get-started alt-link">Sign Up</span>
+			<div class="hidden error-message login-error" id="no-match">The username or password you've entered cannot be found. Try again, or click “sign up” to create a new account.</div>
+			<div class="hidden error-message login-error" id="empty-fields">Please fill out both fields</div>
 		</div>
 	</div>
 

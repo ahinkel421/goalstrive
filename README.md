@@ -3,9 +3,8 @@ Goalstrive (Capstone Project 2)
 
 To dos for next session:
 
-1. Add comments to code changes.
-1. Add alert if log in invalid.
 1. On logout, change navbar back.
+1. On login/signup button click, reset input values to "".
 1. On dest goals page, explain checkpoint goals.
 1. Enable adding checkpoint goals.
 
@@ -47,3 +46,5 @@ Finished goals:
 1. If invalid date/eta is entered, nothing renders. Fix.
 1. Added handleSignupErrors function.
 1. Get "Log Out" button working.
+1. Add comments to code changes.
+1. Add alert if log in invalid.

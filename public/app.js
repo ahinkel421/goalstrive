@@ -16,7 +16,9 @@ let pageIDs = [
 let errorMessageIDs = [
 	"username-taken",
 	"password-length",
-	"username-length"
+	"username-length",
+	"no-match",
+	"empty-fields"
 ];
 
 $(function () {
@@ -162,6 +164,18 @@ function handleSignupErrors(errorMessage) {
 	}
 }
 
+function handleLoginErrors(errorStatus, username, password) {
+
+	if(errorStatus === 400) {
+		hideAllErrorMessages();
+		$('#empty-fields').removeClass('hidden');
+	}
+	else if(errorStatus === 401) {
+		hideAllErrorMessages();
+		$('#no-match').removeClass('hidden')
+	}
+}
+
 function handleAuth(route, username, password) {
 
 	let userData = {
@@ -193,6 +207,8 @@ function handleAuth(route, username, password) {
 			// TODO: SHOW SERVER ERRORS LIKE MUST BE 5 CHAR LONG
 			console.log(errorData);
 			if (errorData.responseJSON === undefined) {
+				console.log(errorData.status);
+				handleLoginErrors(errorData.status, username, password);
 				return;
 			}
 			else {
@@ -225,24 +241,25 @@ function showDestinationGoals() {
 					let formattedDate = formatDate(goal.eta);
 					$('.goals-container').append(
 						`<div class="individual-goal" data-id=${goal.id}>
-								<div class="goal-and-eta-box">
-									<h3 class="destination-goal">${goal.destination}</h3>
-									<span class="eta">(ETA: ${formattedDate}):</span>
+						<div class="goal-and-eta-box">
+						<h3 class="destination-goal">${goal.destination}</h3>
+						<span class="eta">(ETA: ${formattedDate}):</span>
 
-									<span class="dropdown-arrow down-arrow">&darr;</span>
-								</div>
-								<div class="collapsable-goal-info">
-									<p class="destination-goal-description">${goal.description}</p>
-									<h4 id="checkpoints-header">Checkpoints</h4>
-									<ul id="checkpoint-goals-list">
-										<li class="grey-text checkpoint-goal">
-											<input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint...">
-										</li>
-									</ul>
-									<span class="delete-goal">Delete this destination goal</span>
-								</div>
+						<span class="dropdown-arrow down-arrow">&darr;</span>
+						</div>
+						<div class="collapsable-goal-info">
+						<p class="destination-goal-description">${goal.description}</p>
+						<h4 id="checkpoints-header">Checkpoints</h4>
+						<ul id="checkpoint-goals-list">
+						<li class="grey-text checkpoint-goal">
+						<input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint...">
+						</li>
+						</ul>
+						<span class="delete-goal">Delete this destination goal</span>
+						</div>
 
-							</div>`);
+						</div>`
+					);
 				}
 
 			}

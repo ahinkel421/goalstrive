@@ -245,7 +245,7 @@ Sign Up/Log In Page Styling
 	width: 33%;
 	margin: 0 auto;
 	height: 450px;
-	padding: 15px 0;
+	padding: 10px 0;
 	box-shadow: 0 5px 10px -2px gray;
 }
 
@@ -269,6 +269,16 @@ Sign Up/Log In Page Styling
 	font-weight: bold;
 	width: 70%;
 	margin: 10px auto;
+}
+
+.login-error {
+	width: 80%;
+	margin: 5px auto;
+	font-size: 14px;
+}
+
+#empty-fields {
+	margin: 18px auto;
 }
 
 
