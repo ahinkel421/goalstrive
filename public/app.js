@@ -1,5 +1,6 @@
 let state = {
 	loggedIn: false,
+	//Keeps track of the user's token (logged in/not logged in)
 	token:""
 }
 
@@ -54,6 +55,8 @@ $(function () {
 		hideAllPages();
 		$('#homepage').removeClass('hidden');
 	});
+
+	//When user clickes logout, they're taken to homepage and token is taken away.
 	$('#logout-nav-link').on('click', function() {
 		hideAllPages();
 		console.log("log out")
@@ -178,6 +181,8 @@ function handleAuth(route, username, password) {
 		success: function(data){
 			console.log("yay! authenticated");
 			state.loggedIn = true;
+			//state.token is now whatever token was sent to the user
+			//in order to authenticate them from page to page.
 			state.token = data.authToken;
 			handleHeaderLinks();
 			showDestinationGoals();
@@ -205,6 +210,7 @@ function showDestinationGoals() {
 		url: `/api/goals`,
 		type: "GET",
 		dataType: "json",
+		//Token must be included in the request header in order to authenticate the user.
 		headers: {
 			"Authorization": `Bearer ${state.token}`
 		},
@@ -253,6 +259,8 @@ function showDestinationGoals() {
 
 
 function formatDate(dateString) {
+	//When passing in the goal's eta for dateString, we pull the date,
+	//month, and year from the eta, concatinate them accordingly and return the full date.
 	var date = new Date(dateString);
 	var curr_date = date.getDate();
 	var curr_month = date.getMonth() + 1; //Months are zero based
@@ -274,6 +282,7 @@ function handleNewDestinationGoal(destination, eta, description) {
 		data: JSON.stringify(goalData),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
+		//Token must be included in the request header in order to authenticate the user.
 		headers: {
 			"Authorization": `Bearer ${state.token}`
 		},
@@ -284,7 +293,8 @@ function handleNewDestinationGoal(destination, eta, description) {
 		},
 		error: function(errorData) {
 			console.log("something went wrong...", errorData, goalData)
-			var parsedDate=Date.parse(eta)
+			var parsedDate=Date.parse(eta);
+			//below???
 			if (!isNaN(parsedDate)==false)
 			{
 				alert('Please enter a valid date in the "ETA" section.');
@@ -300,6 +310,7 @@ function handleDeleteDestinationGoal(id) {
 		data: JSON.stringify({id: id}),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
+		//Token must be included in the request header in order to authenticate the user.
 		headers: {
 			"Authorization": `Bearer ${state.token}`
 		},
