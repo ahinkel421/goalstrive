@@ -11,7 +11,6 @@ Other To dos:
 
 1. Have goal fade out before reloading page.
 1. Fix free demo
-1. Add errors for invalid goal submissions.
 1. Add user id property to goals.
 1. Automatically trim whitespace on signup/login
 1. Make goals updatable
@@ -49,3 +48,4 @@ Finished goals:
 1. Add alert if log in invalid.
 1. On logout, change navbar back.
 1. On login/signup button click, reset input values to "".
+1. Add errors for invalid goal submissions.
