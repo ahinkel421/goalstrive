@@ -3,9 +3,9 @@ Goalstrive (Capstone Project 2)
 
 To dos for next session:
 
-1. On login/signup button click, reset input values to "".
-1. On dest goals page, explain checkpoint goals.
 1. Enable adding checkpoint goals.
+1. On dest goals page, explain checkpoint goals.
+
 
 Other To dos:
 
@@ -48,3 +48,4 @@ Finished goals:
 1. Add comments to code changes.
 1. Add alert if log in invalid.
 1. On logout, change navbar back.
+1. On login/signup button click, reset input values to "".

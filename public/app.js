@@ -214,6 +214,7 @@ function handleAuth(route, username, password) {
 			handleHeaderLinks();
 			showDestinationGoals();
 			hideAllErrorMessages();
+			$('#username-js-login, #password-js-login, #username-js-signup, #password-js-signup').val("");
 		},
 		error: function(errorData){
 			console.log("we couldn't authenticate");
@@ -332,6 +333,10 @@ function handleNewDestinationGoal(destination, eta, description) {
 		}
 	});
 }
+
+// function handleNewCheckpointGoal(subGoal) {
+
+// }
 
 function handleDeleteDestinationGoal(id) {
 	$.ajax({
