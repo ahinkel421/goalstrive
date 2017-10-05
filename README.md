@@ -3,8 +3,8 @@ Goalstrive (Capstone Project 2)
 
 To dos for next session:
 
-1. Enable adding checkpoint goals.
 1. On dest goals page, explain checkpoint goals.
+1. Checkpoint goals work for first dest goal. But not for second.
 
 
 Other To dos:
@@ -49,3 +49,4 @@ Finished goals:
 1. On logout, change navbar back.
 1. On login/signup button click, reset input values to "".
 1. Add errors for invalid goal submissions.
+1. Enable adding checkpoint goals.

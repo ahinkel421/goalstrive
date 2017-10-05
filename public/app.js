@@ -121,19 +121,12 @@ $(function () {
 		$(this).parent().append('<span class="dropdown-arrow down-arrow">&darr;</span>');
 	});
 
-	// $('#new-checkpoint-form').submit(function(event) {
-	// 	event.preventDefault();
-	// 	let newCheckpoint = $('#new-checkpoint').val();
-	// 	$('#checkpoint-goals-list').prepend(newCheckpoint);
-	// });
-
 	$('.goals-container').on('submit', '#new-checkpoint-form', function(event) {
 		event.preventDefault();
 		let newCheckpoint = $('#new-checkpoint').val();
 		let goalID = $(this).parents('.individual-goal').attr('data-id');
+		console.log(newCheckpoint);
 		handleNewCheckpointGoal(goalID, newCheckpoint);
-		// $('#checkpoint-goals-list').prepend(`<li>${newCheckpoint}</li>`);
-		//TODO: refresh goals w/ data from server
 	});
 
 });
@@ -259,7 +252,7 @@ function showDestinationGoals() {
 				$('.goals-container').html('');
 				for(let goal of goalsArray) {
 					let goalsList = goal.subGoals.map(function(goal) {
-						return `<li>${goal}</li>`
+						return `<li class="individual-checkpoint-goal">${goal}</li>`
 					});
 					let formattedDate = formatDate(goal.eta);
 					$('.goals-container').append(
@@ -348,8 +341,6 @@ function handleNewCheckpointGoal(goalID, subGoal) {
 	let currentGoal = state.goalsArray.find(function(goal) {
 		return goal.id === goalID;
 	});
-	// console.log(subGoal);
-	// console.log(currentGoal.subGoals);
 	currentGoal.subGoals.push(subGoal);
 	let goalData = {
 		id: goalID,
@@ -362,7 +353,6 @@ function handleNewCheckpointGoal(goalID, subGoal) {
 		data: JSON.stringify(goalData),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
-		//Token must be included in the request header in order to authenticate the user.
 		headers: {
 			"Authorization": `Bearer ${state.token}`
 		},

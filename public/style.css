@@ -454,7 +454,7 @@ My Destination Goals Page Styling
 }
 
 #checkpoint-goals-list {
-	margin: 0 20px 80px 90px;
+	margin: 0 20px 60px 90px;
 	font-size: 22px;
 	list-style-position: inside;
 	list-style: none;
@@ -464,13 +464,17 @@ My Destination Goals Page Styling
 }
 
 .checkpoint-goal {
-	margin: 60px 0 60px 0;
+	margin: 30px 0 60px 0;
 }
 
-#new-checkpoint-form::before {
+#new-checkpoint-form::before, .individual-checkpoint-goal::before {
 	content: "•    ";
 	color: #59D1AA;
 	font-size: 30px;
+}
+
+.individual-checkpoint-goal {
+	margin: 30px 0;
 }
 
 #new-checkpoint {
@@ -489,6 +493,10 @@ My Destination Goals Page Styling
 	padding-bottom: 30px;
 	box-shadow: 0 4px 2px -2px #efefef;
 	border-radius: 8px;
+}
+
+.individual-checkpoint-goal {
+
 }
 
 #goals-page-button {
