@@ -120,6 +120,18 @@ $(function () {
 		$(this).parent().append('<span class="dropdown-arrow down-arrow">&darr;</span>');
 	});
 
+	// $('#new-checkpoint-form').submit(function(event) {
+	// 	event.preventDefault();
+	// 	let newCheckpoint = $('#new-checkpoint').val();
+	// 	$('#checkpoint-goals-list').prepend(newCheckpoint);
+	// });
+
+	$('.goals-container').on('submit', '#new-checkpoint-form', function(event) {
+		event.preventDefault();
+		let newCheckpoint = $('#new-checkpoint').val();
+		$('#checkpoint-goals-list').prepend(`<li>${newCheckpoint}</li>`);
+	});
+
 });
 
 //Functions
@@ -242,23 +254,23 @@ function showDestinationGoals() {
 					let formattedDate = formatDate(goal.eta);
 					$('.goals-container').append(
 						`<div class="individual-goal" data-id=${goal.id}>
-						<div class="goal-and-eta-box">
-						<h3 class="destination-goal">${goal.destination}</h3>
-						<span class="eta">(ETA: ${formattedDate}):</span>
-
-						<span class="dropdown-arrow down-arrow">&darr;</span>
-						</div>
-						<div class="collapsable-goal-info">
-						<p class="destination-goal-description">${goal.description}</p>
-						<h4 id="checkpoints-header">Checkpoints</h4>
-						<ul id="checkpoint-goals-list">
-						<li class="grey-text checkpoint-goal">
-						<input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint...">
-						</li>
-						</ul>
-						<span class="delete-goal">Delete this destination goal</span>
-						</div>
-
+							<div class="goal-and-eta-box">
+								<h3 class="destination-goal">${goal.destination}</h3>
+								<span class="eta">(ETA: ${formattedDate}):</span>
+								<span class="dropdown-arrow down-arrow">&darr;</span>
+							</div>
+							<div class="collapsable-goal-info">
+								<p class="destination-goal-description">${goal.description}</p>
+								<h4 id="checkpoints-header">Checkpoints</h4>
+								<ul id="checkpoint-goals-list">
+									<li class="grey-text checkpoint-goal">
+										<form id="new-checkpoint-form">
+											<input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..." autocomplete="off">
+										</form>
+									</li>
+								</ul>
+								<span class="delete-goal">Delete this destination goal</span>
+							</div>
 						</div>`
 					);
 				}

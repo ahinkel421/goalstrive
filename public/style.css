@@ -129,7 +129,7 @@ Navbar Styling
 	cursor: pointer;
 }
 
-#login-nav-link:hover, #my-goals-link:hover, .alt-link:hover {
+#login-nav-link:hover, #my-goals-link:hover, .alt-link:hover, #logout-nav-link:hover {
 	color: #611C11;
 }
 
@@ -467,7 +467,7 @@ My Destination Goals Page Styling
 	margin: 60px 0 60px 0;
 }
 
-.checkpoint-goal::before {
+#new-checkpoint-form::before {
 	content: "•    ";
 	color: #59D1AA;
 	font-size: 30px;
