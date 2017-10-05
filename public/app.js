@@ -121,9 +121,9 @@ $(function () {
 		$(this).parent().append('<span class="dropdown-arrow down-arrow">&darr;</span>');
 	});
 
-	$('.goals-container').on('submit', '#new-checkpoint-form', function(event) {
+	$('.goals-container').on('submit', '.new-checkpoint-form', function(event) {
 		event.preventDefault();
-		let newCheckpoint = $('#new-checkpoint').val();
+		let newCheckpoint = $(this).children('.new-checkpoint').val();
 		let goalID = $(this).parents('.individual-goal').attr('data-id');
 		console.log(newCheckpoint);
 		handleNewCheckpointGoal(goalID, newCheckpoint);
@@ -215,7 +215,6 @@ function handleAuth(route, username, password) {
 		},
 		error: function(errorData){
 			console.log("we couldn't authenticate");
-			// TODO: SHOW SERVER ERRORS LIKE MUST BE 5 CHAR LONG
 			console.log(errorData);
 			if (errorData.responseJSON === undefined) {
 				console.log(errorData.status);
@@ -268,8 +267,8 @@ function showDestinationGoals() {
 								<ul id="checkpoint-goals-list">
 								${goalsList.join(" ")}
 									<li class="grey-text checkpoint-goal">
-										<form id="new-checkpoint-form">
-											<input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..." autocomplete="off">
+										<form class="new-checkpoint-form">
+											<input class="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..." autocomplete="off">
 										</form>
 									</li>
 								</ul>
