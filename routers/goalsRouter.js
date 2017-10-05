@@ -58,25 +58,6 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 
 });
 
-
-
-//For posting checkpoint goals
-
-// router.post('/checkpoint', passport.authenticate('jwt', {session: false}), (req, res) => {
-// 	Goal
-// 	.create({
-// 		subGoals: req.body.subGoal,
-// 		userId: req.user.id
-// 	})
-// 	.then(goal => res.status(201).json(goal.apiRepr()))
-// 	.catch(err => {
-// 		console.error(err);
-// 		res.status(500).json({error: 'Something went wrong. Please try again.'});
-// 	});
-// });
-
-
-
 //In order to delete goals, the user must be authenticated.
 router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
 	if(!req.body.id) {
@@ -117,7 +98,7 @@ router.put('/:id', passport.authenticate('jwt', {session: false}), (req, res) =>
 	}
 
 	const updated = {};
-	const updateableFields = ['destination', 'eta', 'description'];
+	const updateableFields = ['destination', 'eta', 'description', 'subGoals'];
 	updateableFields.forEach(field => {
 		if (field in req.body) {
 			updated[field] = req.body[field];
@@ -132,3 +113,7 @@ router.put('/:id', passport.authenticate('jwt', {session: false}), (req, res) =>
 });
 
 module.exports = {goalsRouter:router};
+
+
+
+

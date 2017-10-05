@@ -1,7 +1,8 @@
 let state = {
 	loggedIn: false,
 	//Keeps track of the user's token (logged in/not logged in)
-	token:""
+	token:"",
+	goalsArray: []
 }
 
 let pageIDs = [
@@ -129,7 +130,10 @@ $(function () {
 	$('.goals-container').on('submit', '#new-checkpoint-form', function(event) {
 		event.preventDefault();
 		let newCheckpoint = $('#new-checkpoint').val();
-		$('#checkpoint-goals-list').prepend(`<li>${newCheckpoint}</li>`);
+		let goalID = $(this).parents('.individual-goal').attr('data-id');
+		handleNewCheckpointGoal(goalID, newCheckpoint);
+		// $('#checkpoint-goals-list').prepend(`<li>${newCheckpoint}</li>`);
+		//TODO: refresh goals w/ data from server
 	});
 
 });
@@ -245,13 +249,18 @@ function showDestinationGoals() {
 			"Authorization": `Bearer ${state.token}`
 		},
 		success: function(goalsArray){
+			state.goalsArray = goalsArray;
 			console.log("yay! We have our goals.");
 			console.log(goalsArray);
-
+			console.log(state.token);
+			
 			if (goalsArray.length > 0) {
 				$('#my-destination-goals-page').removeClass('hidden');
 				$('.goals-container').html('');
 				for(let goal of goalsArray) {
+					let goalsList = goal.subGoals.map(function(goal) {
+						return `<li>${goal}</li>`
+					});
 					let formattedDate = formatDate(goal.eta);
 					$('.goals-container').append(
 						`<div class="individual-goal" data-id=${goal.id}>
@@ -264,6 +273,7 @@ function showDestinationGoals() {
 								<p class="destination-goal-description">${goal.description}</p>
 								<h4 id="checkpoints-header">Checkpoints</h4>
 								<ul id="checkpoint-goals-list">
+								${goalsList.join(" ")}
 									<li class="grey-text checkpoint-goal">
 										<form id="new-checkpoint-form">
 											<input id="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..." autocomplete="off">
@@ -334,9 +344,44 @@ function handleNewDestinationGoal(destination, eta, description) {
 	});
 }
 
-// function handleNewCheckpointGoal(subGoal) {
-
-// }
+function handleNewCheckpointGoal(goalID, subGoal) {
+	let currentGoal = state.goalsArray.find(function(goal) {
+		return goal.id === goalID;
+	});
+	// console.log(subGoal);
+	// console.log(currentGoal.subGoals);
+	currentGoal.subGoals.push(subGoal);
+	let goalData = {
+		id: goalID,
+		subGoals: currentGoal.subGoals
+	};
+	console.log(goalData);
+	$.ajax({
+		url: `api/goals/${goalID}`,
+		type: "PUT",
+		data: JSON.stringify(goalData),
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		//Token must be included in the request header in order to authenticate the user.
+		headers: {
+			"Authorization": `Bearer ${state.token}`
+		},
+		success: function(data) {
+			console.log('Woohoo! Goal updated');
+			console.log(data);
+			showDestinationGoals();
+		},
+		error: function(errorData) {
+			console.log("something went wrong...", errorData, goalData)
+			var parsedDate=Date.parse(eta);
+			//below???
+			if (!isNaN(parsedDate)==false)
+			{
+				alert('Please enter a valid date in the "ETA" section.');
+			}
+		}
+	});
+}
 
 function handleDeleteDestinationGoal(id) {
 	$.ajax({
