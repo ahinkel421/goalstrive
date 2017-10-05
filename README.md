@@ -25,6 +25,12 @@ Once app is functioning To dos:
 1. Make responsive
 1. Fade from page to page
 
+USER FEEDBACK:
+
+1. Clarify Create *Destination* goal button.
+1. Add checkpoint button
+1. On submitting new goal, all other goals collapse 
+
 Finished goals: 
 
 1. Get handleLogin function working
