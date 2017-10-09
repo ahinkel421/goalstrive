@@ -69,3 +69,4 @@ Once the user has their goal in mind and clicks the "Create new goal" button, th
 
 &nbsp;
 
+When a new Destination Goal is submitted, the user is taken to their Destination Goals page. Here they will find a list of all of the Destination Goals they have submitted. 
