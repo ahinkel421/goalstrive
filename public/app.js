@@ -127,6 +127,7 @@ $(function () {
 		let goalID = $(this).parents('.individual-goal').attr('data-id');
 		console.log(newCheckpoint);
 		handleNewCheckpointGoal(goalID, newCheckpoint);
+		$(this).parents('.collapsable-goal-info').removeClass('hidden');
 	});
 
 });
@@ -259,9 +260,9 @@ function showDestinationGoals() {
 							<div class="goal-and-eta-box">
 								<h3 class="destination-goal">${goal.destination}</h3>
 								<span class="eta">(ETA: ${formattedDate}):</span>
-								<span class="dropdown-arrow down-arrow">&darr;</span>
+								<span class="dropdown-arrow right-arrow">&rarr;</span>
 							</div>
-							<div class="collapsable-goal-info">
+							<div class="collapsable-goal-info hidden">
 								<p class="destination-goal-description">${goal.description}</p>
 								<h4 id="checkpoints-header">Checkpoints</h4>
 								<ul id="checkpoint-goals-list">
@@ -363,7 +364,6 @@ function handleNewCheckpointGoal(goalID, subGoal) {
 		error: function(errorData) {
 			console.log("something went wrong...", errorData, goalData)
 			var parsedDate=Date.parse(eta);
-			//below???
 			if (!isNaN(parsedDate)==false)
 			{
 				alert('Please enter a valid date in the "ETA" section.');

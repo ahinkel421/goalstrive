@@ -1,33 +1,31 @@
 Goalstrive (Capstone Project 2)
 ================================
 
-To dos for next session:
+Working on:
 
+1. Make responsive
+1. Add tests for routes
+1. Add CI and Heroku
+1. Make goals updatable/deletable.
 1. On dest goals page, explain checkpoint goals.
+1. On submitting new goal, all other goals collapse 
 
-
-Other To dos:
+To dos:
 
 1. Have goal fade out before reloading page.
 1. Fix free demo
-1. Add user id property to goals.
 1. Automatically trim whitespace on signup/login
-1. Make goals updatable
-1. Add a 'delete goals' button. Make delete request to server.
+1. Have a way to check off completed goals
 
 Once app is functioning To dos:
 
 1. Change ETA entree to calender 
-1. Add tests for routes
-1. Add CI and Heroku
 1. Generate random quotes 
 1. Expand on what the app is about on first page
-1. Make responsive
 1. Fade from page to page
 
 USER FEEDBACK:
 
-1. Clarify Create *Destination* goal button.
 1. Add checkpoint button
 1. On submitting new goal, all other goals collapse 
 
@@ -56,3 +54,10 @@ Finished goals:
 1. Add errors for invalid goal submissions.
 1. Enable adding checkpoint goals.
 1. Checkpoint goals work for first dest goal. But not for second.
+1. Add user id property to goals.
+1. Add a 'delete goals' button. Make delete request to server.
+1. Clarify Create *Destination* goal button.
+
+
+
+
