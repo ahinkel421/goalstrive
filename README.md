@@ -69,7 +69,7 @@ Once the user has their goal in mind and clicks the "Create new goal" button, th
 
 &nbsp;
 
-When a new Destination Goal is submitted, the user is taken to their Destination Goals page. Here they will find a list of all of the Destination Goals they have submitted. Below their list of goals, there is a "Create new destination goal" button, to allow the user to do exactly that.
+When a new Destination Goal is submitted, the user is taken to their Destination Goals page. Here they will find a list of all of the Destination Goals they have submitted. Below their list of goals, there is a "Create new destination goal" button, which will take them back to the "new goal" submission form.
 
 &nbsp;
 
@@ -78,4 +78,10 @@ When a new Destination Goal is submitted, the user is taken to their Destination
 &nbsp;
 
 &nbsp;
+
+The arrows to the right of each goal are clickable and will collapse that specific goal to display more information and allow the user to add corresponding "Checkpoint Goals."
+
+&nbsp;
+
+![readme-screenshot7](https://github.com/ahinkel421/goalstrive/blob/master/readme-screenshot7.png)
 
