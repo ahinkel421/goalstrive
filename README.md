@@ -59,3 +59,13 @@ Initially upon creating an account and logging in, the user will not have any De
 
 &nbsp;
 
+Once the user has their goal in mind and clicks the "Create new goal" button, they will be taken to the "New Destination Goal" form. The three required fields to submit a goal are the Destination (goal), the ETA (due date), and a brief description of the goal to reflect on why it is they want to achieve that goal.
+
+&nbsp;
+
+![readme-screenshot5](https://github.com/ahinkel421/goalstrive/blob/master/readme-screenshot5.png)
+
+&nbsp;
+
+&nbsp;
+
