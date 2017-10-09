@@ -1,7 +1,7 @@
 Goalstrive 
 ================================
 
-Goalstrive as a web application that allows users to break their larger milestone goals (such as buying a house, or starting a new career) into smaller, more achievable goals.
+Goalstrive as a web application that allows users to break their larger milestone goals (such as buying a house, or starting a new career) into smaller, more achievable goals. On Goalstrive, we refer to those larger milestone goals as "Destination Goals." The smaller more achievable goals that make up the Destination Goals, we refer to as "Checkpoint Goals."
 
 
 
@@ -44,6 +44,16 @@ Once the user has an account, they can log in at the following page.
 &nbsp;
 
 ![readme-screenshot3](https://github.com/ahinkel421/goalstrive/blob/master/readme-screenshot3.png)
+
+&nbsp;
+
+&nbsp;
+
+Initially upon creating an account and logging in, the user will not have any Destination Goals saved. Therefore, they will be taken to the following page where they can jump right in and create their first Destination Goal, or take a moment to consider their options. Below the "Create new goal" button, the user is given some friendly suggestions to get them started. At the bottom of the screen, there is an inspirational quote to keep the user motivated (will generate different quote every time in V2 of this app).
+
+&nbsp;
+
+![readme-screenshot4](https://github.com/ahinkel421/goalstrive/blob/master/readme-screenshot4.png)
 
 &nbsp;
 
