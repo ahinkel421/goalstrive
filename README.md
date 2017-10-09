@@ -1,63 +1,11 @@
-Goalstrive (Capstone Project 2)
+Goalstrive 
 ================================
 
-Working on:
-
-1. Make responsive
-1. Add tests for routes
-1. Add CI and Heroku
-1. Make goals updatable/deletable.
-1. On dest goals page, explain checkpoint goals.
-1. On submitting new goal, all other goals collapse 
-
-To dos:
-
-1. Have goal fade out before reloading page.
-1. Fix free demo
-1. Automatically trim whitespace on signup/login
-1. Have a way to check off completed goals
-
-Once app is functioning To dos:
-
-1. Change ETA entree to calender 
-1. Generate random quotes 
-1. Expand on what the app is about on first page
-1. Fade from page to page
-
-USER FEEDBACK:
-
-1. Add checkpoint button
-1. On submitting new goal, all other goals collapse 
-
-Finished goals: 
-
-1. Get handleLogin function working
-1. Get Free Demo button working
-1. On add goal submit, append input.vals() to "goals-container"
-1. Get JWT working on client side (handleSignup function)
-1. Create function to create new goals when posted in new dest goal page.
-1. Fix authorization (Currently able to Log In without entering any credentials).
-1. Make "my goals" link only visible if logged in.
-1. If logged in, "log in" and "get started" go away.
-1. On arrow click (dest goals page), add/remove class hidden from "collapsable-goal-info"
-1. Add a 'create new goal' button to my goals page.
-1. Add faint goal divider
-1. Setup database on mLab
-1. When entering date with numbers (04/25/17) month and day get switched (25/04/17)
-1. If invalid date/eta is entered, nothing renders. Fix.
-1. Added handleSignupErrors function.
-1. Get "Log Out" button working.
-1. Add comments to code changes.
-1. Add alert if log in invalid.
-1. On logout, change navbar back.
-1. On login/signup button click, reset input values to "".
-1. Add errors for invalid goal submissions.
-1. Enable adding checkpoint goals.
-1. Checkpoint goals work for first dest goal. But not for second.
-1. Add user id property to goals.
-1. Add a 'delete goals' button. Make delete request to server.
-1. Clarify Create *Destination* goal button.
+Goalstrive as a web application that allows users to break their larger milestone goals (such as buying a house, or starting a new career) into smaller, more achievable goals.
 
 
 
+## Summary 
+
+The user's experience begins at the home page, where they are given a brief description about the app. They are encouraged to start their Goalstrive journey by clicking the "Get Started" button below the synopsis. If they already have an account, there is prompt to "Log in" below the Get Started button. Below these options, there is (will be) more information about the application and about why it is important to break down one's goals into smaller goals. This information is displayed so that the user doesn't feel cornered into getting started right away. They can browse the homepage and gain some more insight about the app before making the decision to get started/sign up.
 

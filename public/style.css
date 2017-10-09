@@ -216,19 +216,9 @@ Homepage Styling
 	color: #8A2818;
 }
 
-#demo {
-	margin: 8px;
-	color: #59D1AA;
-	display: inline-block;
-	font-family: 'Poiret One', cursive;
-}
-
-#demo:hover {
-	color: #2B8465;
-}
 
 #more-info {
-	margin: 33px;
+	margin: 40px;
 }
 
 

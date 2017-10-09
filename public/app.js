@@ -49,11 +49,6 @@ $(function () {
 		$('#log-in-page').removeClass('hidden');
 	});
 
-	$('#demo').on('click', function() {
-		hideAllPages();
-		$('#no-goals').removeClass('hidden');
-	});
-
 	$('.home-link').on('click', function() {
 		hideAllPages();
 		$('#homepage').removeClass('hidden');
