@@ -41,35 +41,12 @@ app.use('/api/users', usersRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/goals', goalsRouter);
 
-// A protected endpoint which needs a valid JWT to access it
-// app.get(
-//   '/api/protected',
-//   passport.authenticate('jwt', {session: false}),
-//   (req, res) => {
-//     return res.json({
-//       data: 'rosebud'
-//     });
-//   }
-//   );
-
-// app.get(
-//   '/api/unprotected',
-//   (req, res) => {
-//     return res.json({
-//       data: 'rosebud'
-//     });
-//   }
-//   );
-
 app.use('*', (req, res) => {
   return res.status(404).json({message: 'Not Found'});
 });
 
 mongoose.Promise = global.Promise;
 
-// closeServer needs access to a server object, but that only
-// gets created when `runServer` runs, so we declare `server` here
-// and then assign a value to it in run
 let server;
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {
@@ -110,10 +87,3 @@ if (require.main === module) {
 
 module.exports = {runServer, app, closeServer};
 
-
-//Defining my apps purpose:
-
-  //This app allows users to take their larger, milestone goals and break
-  //them down into smaller achievable goals. The idea is to make those
-  //big lifetime goals seem less intimidating and more achievable by
-  //taking them one small step at a time.
