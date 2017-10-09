@@ -15,7 +15,15 @@ The user's experience begins at the home page, where they are given a brief desc
 
 
 
+
+
+
+
 If the user decides to sign up for an account and clicks the "Get Started" button, they will be taken to the following sign up form where they can create a new user. Upon submitting their new username and password, they will be added to the database and will be able to sign in and sign out, using those credentials, at their leisure.  
+
+
+
+
 
 
 
