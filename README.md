@@ -31,6 +31,21 @@ If the user decides to sign up for an account and clicks the "Get Started" butto
 
 
 
-
-
 ![readme-screenshot2](https://github.com/ahinkel421/goalstrive/blob/master/readme-screenshot2.png)
+
+&nbsp;
+
+&nbsp;
+
+
+
+Once the user has an account, they can log in at the following page.
+
+&nbsp;
+
+![readme-screenshot3](https://github.com/ahinkel421/goalstrive/blob/master/readme-screenshot3.png)
+
+&nbsp;
+
+&nbsp;
+
