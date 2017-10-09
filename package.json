@@ -1,10 +1,11 @@
 {
-  "name": "blog-app-challenge-starter-files",
+  "name": "goalstrive",
   "version": "0.0.1",
-  "description": "Shopping list app to demo 'the modern classic'",
+  "description": "An app to help keep track of your long term goals",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -25,5 +26,10 @@
     "hyperdev",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^4.0.1"
+  }
 }
