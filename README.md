@@ -85,3 +85,7 @@ The arrows to the right of each goal are clickable and will collapse that specif
 
 ![readme-screenshot7](https://github.com/ahinkel421/goalstrive/blob/master/readme-screenshot7.png)
 
+
+
+
+
