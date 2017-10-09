@@ -87,5 +87,14 @@ The arrows to the right of each goal are clickable and will collapse that specif
 
 
 
+## Technologies
 
 
+
+-HTML5
+
+-CSS
+
+-Javascript (jQuery & nodeJS)
+
+-MongoDB
