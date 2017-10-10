@@ -91,10 +91,30 @@ The arrows to the right of each goal are clickable and will collapse that specif
 
 
 
--HTML5
+- Front-end:
+	
+	- HTML5
 
--CSS
+	- CSS
 
--Javascript (jQuery & nodeJS)
+	- Javascript + jQuery
 
--MongoDB
+- Back-end:
+
+	- Node.js
+
+	- MongoDB + Mongoose
+
+	- Express
+
+- Testing:
+
+	- Mocha
+
+	- Chai
+
+
+
+
+
+
