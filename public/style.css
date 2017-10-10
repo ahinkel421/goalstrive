@@ -485,10 +485,6 @@ My Destination Goals Page Styling
 	border-radius: 8px;
 }
 
-.individual-checkpoint-goal {
-
-}
-
 #goals-page-button {
 	margin-left: 40px;
 	margin-top: 40px;
@@ -504,20 +500,20 @@ Media Queries
 */
 
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
 	.homepage-header {
-	width: 90%;
-	margin: 0 auto;
-	font-size: 50px;
-	font-weight: normal;
+		width: 90%;
+		margin: 0 auto;
+		font-size: 50px;
+		font-weight: normal;
 	}
 
 	.overview {
-	width: 70%;
-	margin: 25px auto;
-	font-size: 18px;
-	line-height: 180%;
+		width: 70%;
+		margin: 25px auto;
+		font-size: 18px;
+		line-height: 180%;
 	}
 
 	#get-started-button {
@@ -527,35 +523,38 @@ Media Queries
 	}
 
 	#login-or-demo {
-	font-family: 'Poiret One', cursive;
-	font-size: 13px;
+		font-family: 'Poiret One', cursive;
+		font-size: 13px;
 	}
 
 	.alt-link {
-	font-weight: bold;
-	color: #8A2818;
+		font-weight: bold;
+		color: #8A2818;
 	}
 
 
 	#more-info {
-	margin: 40px;
+		margin: 40px;
 	}
 
+	.auth-box {
+		width: 50%;
+	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 	.homepage-header {
-	width: 95%;
-	margin: 0 auto;
-	font-size: 40px;
-	font-weight: normal;
+		width: 95%;
+		margin: 0 auto;
+		font-size: 40px;
+		font-weight: normal;
 	}
 
 	.overview {
-	width: 80%;
-	margin: 25px auto;
-	font-size: 13px;
-	line-height: 180%;
+		width: 80%;
+		margin: 25px auto;
+		font-size: 13px;
+		line-height: 180%;
 	}
 
 	#get-started-button {
@@ -565,39 +564,57 @@ Media Queries
 	}
 
 	#login-or-demo {
-	font-family: 'Poiret One', cursive;
-	font-size: 13px;
+		font-family: 'Poiret One', cursive;
+		font-size: 13px;
 	}
 
 	.alt-link {
-	font-weight: bold;
-	color: #8A2818;
+		font-weight: bold;
+		color: #8A2818;
 	}
 
 
 	#more-info {
-	margin: 40px;
+		margin: 40px;
 	}
 
 	.navbar-links {
 		display: none;
 	}
 
+	.auth-box {
+		width: 85%;
+	}
 }
 
 @media (min-width: 1700px) {
 	.homepage-header {
-	width: 80%;
-	margin: 0 auto;
-	font-size: 70px;
-	font-weight: normal;
+		width: 80%;
+		margin: 0 auto;
+		font-size: 70px;
 	}
 
 	.overview {
-	width: 60%;
-	margin: 50px auto;
-	font-size: 25px;
-	line-height: 180%;
+		width: 60%;
+		margin: 50px auto;
+		font-size: 25px;
+		line-height: 180%;
+	}
+
+	.auth-box {
+		width: 30%;
+		height: 500px;
+		padding: 50px;
+	}
+
+	.auth-box-header {
+		font-size: 80px;
+		margin-top: 0;
+	}
+
+	.user-info {
+		width: 55%;
+		font-size: 22px;
 	}
 }
 
