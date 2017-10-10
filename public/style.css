@@ -497,5 +497,118 @@ My Destination Goals Page Styling
 }
 
 
+/*
+=============
+Media Queries
+=============
+*/
+
+
+@media (max-width: 900px) {
+
+	.homepage-header {
+	width: 90%;
+	margin: 0 auto;
+	font-size: 50px;
+	font-weight: normal;
+	}
+
+	.overview {
+	width: 70%;
+	margin: 25px auto;
+	font-size: 18px;
+	line-height: 180%;
+	}
+
+	#get-started-button {
+		width: 150px;
+		height: 35px;
+		font-size: 15px;
+	}
+
+	#login-or-demo {
+	font-family: 'Poiret One', cursive;
+	font-size: 13px;
+	}
+
+	.alt-link {
+	font-weight: bold;
+	color: #8A2818;
+	}
+
+
+	#more-info {
+	margin: 40px;
+	}
+
+}
+
+@media (max-width: 600px) {
+	.homepage-header {
+	width: 95%;
+	margin: 0 auto;
+	font-size: 40px;
+	font-weight: normal;
+	}
+
+	.overview {
+	width: 80%;
+	margin: 25px auto;
+	font-size: 13px;
+	line-height: 180%;
+	}
+
+	#get-started-button {
+		width: 150px;
+		height: 35px;
+		font-size: 15px;
+	}
+
+	#login-or-demo {
+	font-family: 'Poiret One', cursive;
+	font-size: 13px;
+	}
+
+	.alt-link {
+	font-weight: bold;
+	color: #8A2818;
+	}
+
+
+	#more-info {
+	margin: 40px;
+	}
+
+	.navbar-links {
+		display: none;
+	}
+
+}
+
+@media (min-width: 1700px) {
+	.homepage-header {
+	width: 80%;
+	margin: 0 auto;
+	font-size: 70px;
+	font-weight: normal;
+	}
+
+	.overview {
+	width: 60%;
+	margin: 50px auto;
+	font-size: 25px;
+	line-height: 180%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
 
 
