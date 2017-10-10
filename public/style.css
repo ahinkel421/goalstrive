@@ -125,7 +125,7 @@ Navbar Styling
 	padding: 19px;
 }
 
-.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover, .button:hover, #my-goals-link:hover, .alt-link:hover, #logout-nav-link:hover, .delete-goal:hover {
+.navbar-header:hover, #login-nav-link:hover, #get-started-link:hover, .button:hover, #my-goals-link:hover, .alt-link:hover, #logout-nav-link:hover, .delete-goal:hover, .demo-button:hover {
 	cursor: pointer;
 }
 
@@ -270,6 +270,22 @@ Sign Up/Log In Page Styling
 	margin: 18px auto;
 }
 
+.try-demo {
+	margin: 25px auto 20px auto;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.demo-button {
+	color: #59d1aa;
+	font-weight: bold;
+}
+
+.demo-button:hover {
+	color: #3aa58e;
+}
+
+/*2B8451*/
 
 /*
 =====================

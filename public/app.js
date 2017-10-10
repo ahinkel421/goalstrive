@@ -99,7 +99,7 @@ $(function () {
 
 	});
 
-	$('#try-demo').on('click', function(event) {
+	$('.try-demo').on('click', function(event) {
 		handleAuth('auth/login', 'test', 'test123');
 	});
 

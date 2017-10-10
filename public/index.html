@@ -43,6 +43,7 @@
 				<button class="button">Sign Up</button>
 			</form>
 			<span>Already have an account? </span><span class="alt-link login-link-js">Log In</span>
+			<h4 class="try-demo">*Or, try a <span class="demo-button">Free Demo!</span></h4>
 			<div class="hidden error-message" id="username-taken">*Username is already in use. Please try another.</div>
 			<div class="hidden error-message" id="username-length">*Please enter a username</div>
 			<div class="error-message hidden" id="password-length">*Password must be at least five characters</div>
@@ -50,7 +51,7 @@
 	</div>
 
 	<!-- Log-in Sheet -->
-	<div class="page hidden" id="log-in-page">
+	<div class="page" id="log-in-page">
 		<div class="auth-box">
 			<h1 class="goalstrive-logo auth-box-header">Goalstrive</h1>
 			<h3>Log in below</h3>
@@ -60,15 +61,14 @@
 				<button class="button">Log In</button>
 			</form>
 			<span>Don't have an account? </span><span class="get-started alt-link">Sign Up</span>
-			<hr>
-				<button class="button" id="try-demo">Try a free demo!</button>
+			<h4 class="try-demo">*Or, try a <span class="demo-button">Free Demo!</span></h4>
 			<div class="hidden error-message login-error" id="no-match">The username or password you've entered cannot be found. Try again, or click “sign up” to create a new account.</div>
 			<div class="hidden error-message login-error" id="empty-fields">Please fill out both fields</div>
 		</div>
 	</div>
 
 	<!--No Goals Page-->
-	<div class="page" id="no-goals">
+	<div class="page hidden" id="no-goals">
 		<section>
 			<h2 id="no-destination-goals-header">My Destination Goals</h2>
 			<p class="grey-text" id="no-goals-message">You currently have no destination goals set. To create a new destination goal, click the button below.</p>
