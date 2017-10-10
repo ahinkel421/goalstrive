@@ -127,8 +127,9 @@ router.post('/', (req, res) => {
         .then(user => {
 
             //return res.status(201).json(user.apiRepr());
-            const authToken = createAuthToken(user.apiRepr());
-            res.json({authToken});
+            var apiRepr = user.apiRepr()
+            const authToken = createAuthToken(apiRepr);
+            res.json(Object.assign({}, {authToken}, apiRepr));
         })
         .catch(err => {
             // Forward validation errors on to the client, otherwise give a 500
