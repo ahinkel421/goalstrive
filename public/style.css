@@ -43,7 +43,7 @@ body {
 .quote {
 	font-size: 25px;
 	width: 70%;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
 .grey-text {
@@ -285,7 +285,6 @@ Sign Up/Log In Page Styling
 	color: #3aa58e;
 }
 
-/*2B8451*/
 
 /*
 =====================
@@ -295,7 +294,7 @@ No Goals Page Styling
 
 
 #goals-list {
-	text-align: left;
+	margin: 0 auto;
 }
 
 #no-goals {
@@ -515,9 +514,15 @@ Media Queries
 */
 
 @media (max-width: 1060px) {
-	#goals-list {
-		text-align: center;
+	.suggested-goals {
+		margin-right: 7%;
+		margin-left: 0;
 	}
+
+	/*#goals-list {
+		text-align: center;
+		margin: 0 auto;
+	}*/
 }
 
 
@@ -562,9 +567,34 @@ Media Queries
 		width: 50%;
 	}
 
+	.suggested-goals {
+		margin-right: -2%;
+		margin-left: 2%;
+	}
+
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
+	#no-destination-goals-header {
+		margin: 25px auto;
+	}
+
+	#no-goals-message {
+		font-size: 17px;
+		width: 85%;
+	}
+
+	.suggested-goals {
+		font-size: 17px;
+	}
+
+	.quote {
+		font-size: 15px;
+		width: 85%;
+	}
+}
+
+@media (max-width: 660px) {
 	.homepage-header {
 		width: 95%;
 		margin: 0 auto;
@@ -609,13 +639,39 @@ Media Queries
 	}
 
 	#no-destination-goals-header {
-		font-size: 50px;
+		font-size: 40px;
 		width: 95%;
-		margin: 30px auto;
+		margin: 25px auto;
 	}
 
 	#no-goals-message {
+		font-size: 15px;
 		width: 85%;
+	}
+
+	.button {
+		width: 180px;
+		font-size: 17px;
+	}
+
+	#ideas-message {
+		font-size: 26px;
+	}
+
+	.suggested-goals {
+		font-size: 15px;
+		margin-right: 10%;
+		margin-left: 0;
+	}
+
+	#goals-list {
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	.quote {
+		font-size: 18px;
+		width: 90%;
 	}
 }
 
