@@ -57,7 +57,8 @@ describe('User API resource', function() {
 			return chai.request(app)
 			.post('/api/users')
 			.send(newUser)
-			.then(function(user) {
+			.then(function(res) {
+				console.log(res.body);
 				user.username.should.equal(newUser.username);
 				// user.password.should.equal(newUser.password);
 			});

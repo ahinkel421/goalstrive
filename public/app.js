@@ -99,6 +99,10 @@ $(function () {
 
 	});
 
+	$('#try-demo').on('click', function(event) {
+		handleAuth('auth/login', 'test', 'test123');
+	});
+
 	//Collapsible goals
 
 	$('.goals-container').on('click', '.down-arrow', function(event) {
