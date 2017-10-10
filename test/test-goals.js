@@ -6,9 +6,12 @@ const mongoose = require('mongoose');
 const should = chai.should();
 
 const {Goal} = require('../models/goals');
+const {User} = require('../models/users');
 const {app, runServer, closeServer} = require('../server');
 const {TEST_DATABASE_URL} = require('../config');
 
+let test_token = "";
+let userId=""
 chai.use(chaiHttp);
 
 function seedGoalData() {
@@ -21,6 +24,13 @@ function seedGoalData() {
 	return Goal.insertMany(seedData);
 }
 
+function generateUserData() {
+	return {
+		username: faker.internet.userName(),
+		password: faker.name.lastName()
+	}
+}
+
 function generateGoalData() {
 	return {
 		destination: faker.random.words(),
@@ -29,8 +39,8 @@ function generateGoalData() {
 		subGoals: [
 			faker.random.words(),
 			faker.random.words()
-		]
-		// useriD: 
+		],
+		userId: userId
 	}
 }
 
@@ -42,9 +52,18 @@ function tearDownDb() {
 describe('Goal API resource', function() {
 	before(function() {
 		return runServer(TEST_DATABASE_URL);
+
 	});
 	beforeEach(function() {
-		// return seedGoalData();
+			return chai.request(app)
+			.post('/api/users')
+			.send({username:"test", password:"test123"})
+			.then(function(res) {
+				test_token = res.body.authToken;
+				userId = res.body.id;
+			}).then(function(){
+				return seedGoalData()
+			});
 	});
 
 	afterEach(function() {
@@ -55,19 +74,21 @@ describe('Goal API resource', function() {
 		return closeServer();
 	});
 
-	// describe('Get endpoint', function() {
-	// 	it('should return all existing goals', function() {
-	// 		let res;
-	// 		return chai.request(app)
-	// 		.get('/api/goals')
-	// 		.then(function(_res) {
-	// 			return Goal.count();
-	// 		})
-	// 		.then(function(count) {
-	// 			res.body.goals.should.have.lengthOf(count);
-	// 		})
-	// 	});
-	// });
+	describe('Get endpoint', function() {
+		it('should return all existing goals', function() {
+			let res;
+			return chai.request(app)
+			.get('/api/goals')
+			.set('Authorization', `Bearer ${test_token}`)
+			.then(function(_res) {
+				res=_res;
+				return Goal.count();
+			})
+			.then(function(count) {
+				res.body.should.have.lengthOf(count);
+			})
+		});
+	});
 
 	// describe('DELETE endpoint', function() {
 	// 	it('should delete a goal by id', function() {
@@ -88,8 +109,37 @@ describe('Goal API resource', function() {
 	// 		});
 	// 	});
 	// });
+
+	describe('POST endpoint', function() {
+
+		it('should add a new user', function() {
+			const newUser = generateUserData();
+			return chai.request(app)
+			.post('/api/users')
+			.send(newUser)
+			.then(function(res) {
+				let user = res.body;
+				user.username.should.equal(newUser.username);
+			});
+		});
+
+		it('should return a token when logging in', function() {
+			const newUser = generateUserData();
+			return chai.request(app)
+			.post('/api/users')
+			.send(newUser)
+			.then(function(res) {
+				let token = res.body.authToken;
+				return chai.request(app)
+				.post('/api/auth/login')
+				.send(newUser)
+				.then(function(res) {
+					res.body.authToken.should.be.a("string");
+				});
+			});
+		});
+
+	});
+
+
 });
-
-
-
-
