@@ -84,6 +84,9 @@ $(function () {
 		}
 		else {
 			handleNewDestinationGoal(destination, eta, description);
+			$('#goal-name-js').val("");
+			$('#eta-input-js').val("");
+			$('#description-input').val("");
 		}
 	});
 

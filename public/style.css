@@ -593,7 +593,7 @@ Media Queries
 	}
 
 	#my-destination-goals-header {
-		font-size: 45px;
+		font-size: 40px;
 	}
 
 	.destination-goal {
@@ -738,6 +738,52 @@ Media Queries
 
 	#new-goal-form {
 		margin: 80px auto;
+	}
+}
+
+@media (max-width: 520px) {
+	#my-destination-goals-header {
+		font-size: 31px;
+		margin: 0 auto;
+		text-align: center;
+		width: 100%;
+	}
+
+	.destination-goal {
+		margin: 0 4px 0 11px;
+		font-size: 27px;
+	}
+
+	.eta {
+		font-size: 18px;
+	}
+
+	.dropdown-arrow {
+		margin-top: 10px;
+		font-size: 19px;
+	}
+
+	#checkpoints-header {
+		margin-left: 41px;
+	}
+
+	.destination-goal-description {
+		width: 78%;
+		font-size: 12px;
+	}
+
+	#checkpoint-goals-list, .new-checkpoint {
+		font-size: 15px;
+	}
+
+	.delete-goal {
+		font-size: 10px;
+	}
+
+	#goals-page-button {
+		margin-left: 0;
+		width: 186px;
+		font-size: 13px;
 	}
 }
 
