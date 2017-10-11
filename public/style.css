@@ -567,6 +567,10 @@ Media Queries
 		margin-left: 2%;
 	}
 
+	#new-goal-box {
+		width: 85%;
+	}
+
 }
 
 @media (max-width: 750px) {
@@ -668,7 +672,70 @@ Media Queries
 		font-size: 18px;
 		width: 90%;
 	}
+
+	#new-goal-box {
+		width: 85%;
+	}
+
+	#new-goal-header {
+		font-size: 40px;
+	}
+
+	.new-goal-label {
+		font-size: 19px;
+	}
+
+	.goal-info {
+		width: 75%;
+		font-size: 17px;
+	}
+
+	#submit-new-goal-button {
+		width: 220px;
+		height: 45px;
+		margin-bottom: 0;
+	}
+
+	#new-goal-form {
+		margin: 80px auto;
+	}
 }
+
+@media (max-width: 436px) {
+
+	.auth-box {
+		width: 95%;
+	}
+
+	.user-info {
+		width: 75%;
+	}
+
+	#new-goal-box {
+		width: 98%;
+		height: 590px;
+	}
+
+	#new-goal-form {
+		padding: 10px;
+		margin: 64px auto;
+	}
+
+	.goal-info {
+		font-size: 15px;
+	}
+
+	#submit-new-goal-button {
+		width: 192px;
+		height: 45px;
+	}
+
+	#new-goal-header {
+		font-size: 34px;
+		margin: 30px auto;
+	}
+}
+
 
 @media (min-width: 1700px) {
 	.homepage-header {
