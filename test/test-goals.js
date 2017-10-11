@@ -130,6 +130,7 @@ describe('Goal API resource', function() {
 			.send(newUser)
 			.then(function(res) {
 				let token = res.body.authToken;
+				console.log(token);
 				return chai.request(app)
 				.post('/api/auth/login')
 				.send(newUser)
