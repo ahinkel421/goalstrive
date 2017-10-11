@@ -670,7 +670,7 @@ Media Queries
 	}
 
 	.navbar-links {
-		display: none;
+		font-size: 12px;
 	}
 
 	.auth-box {
@@ -785,6 +785,10 @@ Media Queries
 		width: 186px;
 		font-size: 13px;
 	}
+
+	.auth-box {
+		width: 80%;
+	}
 }
 
 @media (max-width: 436px) {
@@ -819,6 +823,33 @@ Media Queries
 	#new-goal-header {
 		font-size: 34px;
 		margin: 30px auto;
+	}
+}
+
+@media (max-width: 380px) {
+		
+	#my-destination-goals-page {
+		padding-top: 96px;
+	}
+
+	.eta {
+		display: block;
+		margin: 10px;
+	}
+
+	.goalstrive-logo {
+		font-size: 28px;
+		margin-top: 5px;
+	}
+
+	.navbar-links {
+		padding: 24px 0;
+		
+	}
+
+	.nav-link {
+		margin: 6px;
+		margin-right: 0;
 	}
 }
 
