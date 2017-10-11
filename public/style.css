@@ -407,6 +407,7 @@ My Destination Goals Page Styling
 	width: 85%;
 	margin: 0 auto;
 	text-align: left;
+	padding-top: 125px;
 }
 
 #my-destination-goals-header {
@@ -430,6 +431,7 @@ My Destination Goals Page Styling
 .eta {
 	font-size: 30px;
 	color: #ABABAB;
+	display: inline-block;
 }
 
 .dropdown-arrow {
@@ -597,7 +599,7 @@ Media Queries
 	}
 
 	.destination-goal {
-		font-size: 30px;
+		font-size: 35px;
 	}
 
 	.eta {
@@ -622,8 +624,8 @@ Media Queries
 	}
 
 	.dropdown-arrow {
-		margin-top: 4px;
-		font-size: 27px;
+		margin-top: 10px;
+		font-size: 23px;
 	}
 
 	#goals-page-button {
@@ -667,10 +669,6 @@ Media Queries
 
 	#more-info {
 		margin: 40px;
-	}
-
-	.navbar-links {
-		font-size: 12px;
 	}
 
 	.auth-box {
@@ -739,9 +737,7 @@ Media Queries
 	#new-goal-form {
 		margin: 80px auto;
 	}
-}
 
-@media (max-width: 520px) {
 	#my-destination-goals-header {
 		font-size: 31px;
 		margin: 0 auto;
@@ -755,11 +751,11 @@ Media Queries
 	}
 
 	.eta {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	.dropdown-arrow {
-		margin-top: 10px;
+		margin-top: 13px;
 		font-size: 19px;
 	}
 
@@ -785,9 +781,16 @@ Media Queries
 		width: 186px;
 		font-size: 13px;
 	}
+}
+
+@media (max-width: 520px) {
 
 	.auth-box {
 		width: 80%;
+	}
+
+	#checkpoint-goals-list {
+		margin-left: 41px;
 	}
 }
 
@@ -821,30 +824,83 @@ Media Queries
 	}
 
 	#new-goal-header {
-		font-size: 34px;
 		margin: 30px auto;
 	}
-}
 
-@media (max-width: 380px) {
-		
-	#my-destination-goals-page {
-		padding-top: 96px;
+	.navbar-links {
+		font-size: 12px;
+		padding: 24px 0;
 	}
 
 	.eta {
 		display: inline-block;
 		margin: 10px;
 	}
+}
 
-	.goalstrive-logo {
+@media (max-width: 376px) {
+
+	.page {
+		padding-top: 90px;
+	}
+
+	.homepage-header {
+		font-size: 32px;
+	}
+
+	.auth-box-header {
+		font-size: 53px;
+	}
+
+	.user-info {
+		height: 33px;
+		font-size: 17px;
+	}
+
+	.button {
+		width: 167px;
+    	font-size: 15px;
+	}
+
+	#no-destination-goals-header {
+		font-size: 32px;
+	}
+
+	#no-goals-message {
+		margin-bottom: 45px;
+	}
+
+	#ideas-message {
+		margin-top: 0;
+	}
+
+	#new-destination-goal-page {
+		padding-top: 58px;
+	}
+
+	#new-goal-header {
+		font-size: 32px;
+	}
+
+	#new-goal-form {
+		margin: 30px auto;
+	}
+
+	#new-goal-box {
+		height: 460px;
+	}
+
+	.goal-info {
+		margin-bottom: 11px;
+	}
+
+	#navbar-logo {
 		font-size: 28px;
 		margin-top: 5px;
 	}
 
 	.navbar-links {
 		padding: 24px 0;
-		
 	}
 
 	.nav-link {
