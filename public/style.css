@@ -916,6 +916,15 @@ Media Queries
 	#checkpoint-goals-list {
 		margin-left: 11px;
 	}
+
+	#checkpoint-goals-list, .new-checkpoint {
+		font-size: 14px;
+	}
+
+	.new-checkpoint-form::before, .individual-checkpoint-goal::before {
+		content: "• ";
+		font-size: 22px;
+}
 }
 
 
