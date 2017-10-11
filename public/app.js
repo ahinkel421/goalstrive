@@ -54,8 +54,6 @@ $(function () {
 		$('#homepage').removeClass('hidden');
 	});
 
-	//When user clickes logout, they're taken to homepage, token is taken away,
-	//and navbar changes accordingly.
 	$('#logout-nav-link').on('click', function() {
 		hideAllPages();
 		$('#homepage').removeClass('hidden');
@@ -262,9 +260,9 @@ function showDestinationGoals() {
 							<div class="goal-and-eta-box">
 								<h3 class="destination-goal">${goal.destination}</h3>
 								<span class="eta">(ETA: ${formattedDate}):</span>
-								<span class="dropdown-arrow right-arrow">&rarr;</span>
+								<span class="dropdown-arrow down-arrow">&darr;</span>
 							</div>
-							<div class="collapsable-goal-info hidden">
+							<div class="collapsable-goal-info">
 								<p class="destination-goal-description">${goal.description}</p>
 								<h4 id="checkpoints-header">Checkpoints</h4>
 								<ul id="checkpoint-goals-list">
