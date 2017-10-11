@@ -140,7 +140,7 @@ describe('Goal API resource', function() {
 			});
 		});
 
-	});
+	}); 
 
 
 });
