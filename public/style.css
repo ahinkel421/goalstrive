@@ -833,7 +833,7 @@ Media Queries
 	}
 
 	.eta {
-		display: block;
+		display: inline-block;
 		margin: 10px;
 	}
 
@@ -850,6 +850,14 @@ Media Queries
 	.nav-link {
 		margin: 6px;
 		margin-right: 0;
+	}
+
+	#checkpoints-header {
+		margin-left: 11px;
+	}
+
+	#checkpoint-goals-list {
+		margin-left: 11px;
 	}
 }
 
