@@ -24,6 +24,8 @@ let errorMessageIDs = [
 
 $(function () {
 
+	//Event Listeners
+
 	$('#sign-up-form-js').submit(function(event) {
 		event.preventDefault();
 		let username = $('#username-js-signup').val();
@@ -38,7 +40,6 @@ $(function () {
 		handleAuth('auth/login', username, password);
 	});
 
-	//Event Listeners
 	$('.get-started').on('click', function() {
 		hideAllPages();
 		$('#sign-up-page').removeClass('hidden');
@@ -95,7 +96,6 @@ $(function () {
 		let deleteConfirmation = confirm('Are you sure?');
 		if (deleteConfirmation) {
 			handleDeleteDestinationGoal(goalID);
-			// TODO: Have goal fade out before reloading page.
 		}
 
 	});

@@ -90,29 +90,6 @@ describe('Goal API resource', function() {
 		});
 	});
 
-	// describe('DELETE endpoint', function() {
-	// 	it('should delete a goal by id', function() {
-	// 		let goal;
-
-	// 		return Goal
-	// 		.findOne()
-	// 		.then(function(_goal) {
-	// 			goal = _goal;
-	// 			console.log(goal._id)
-	// 			return chai.request(app)
-	// 			.delete(`/api/goals/${goal._id}`)
-	// 			.set('Authorization', `Bearer ${test_token}`)
-	// 		})
-	// 		.then(function(res) {
-	// 			res.should.have.status(204);
-	// 			return Goal.findById(goal._id);
-	// 		})
-	// 		.then(function(_goal) {
-	// 			should.not.exist(_goal);
-	// 		});
-	// 	});
-	// });
-
 	describe('POST endpoint', function() {
 
 		it('should add a new user', function() {
@@ -141,8 +118,5 @@ describe('Goal API resource', function() {
 				});
 			});
 		});
-
 	}); 
-
-
 });

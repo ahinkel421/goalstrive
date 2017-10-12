@@ -42,14 +42,6 @@ router.post('/', (req, res) => {
             location: nonStringField
         });
     }
-
-    // If the username and password aren't trimmed we give an error.  Users might
-    // expect that these will work without trimming (i.e. they want the password
-    // "foobar ", including the space at the end).  We need to reject such values
-    // explicitly so the users know what's happening, rather than silently
-    // trimming them and expecting the user to understand.
-    // We'll silently trim the other fields, because they aren't credentials used
-    // to log in, so it's less of a problem.
     const explicityTrimmedFields = ['username', 'password'];
     const nonTrimmedField = explicityTrimmedFields.find(
         field => req.body[field].trim() !== req.body[field]
@@ -70,8 +62,6 @@ router.post('/', (req, res) => {
         },
         password: {
             min: 5,
-            // bcrypt truncates after 72 characters, so let's not give the illusion
-            // of security by storing extra (unused) info
             max: 72
         }
     };
@@ -100,14 +90,11 @@ router.post('/', (req, res) => {
     }
 
     let {username, password} = req.body;
-    // Username and password come in pre-trimmed, otherwise we throw an error
-    // before this
 
     return User.find({username})
         .count()
         .then(count => {
             if (count > 0) {
-                // There is an existing user with the same username
                 return Promise.reject({
                     code: 422,
                     reason: 'ValidationError',
@@ -115,7 +102,6 @@ router.post('/', (req, res) => {
                     location: 'username'
                 });
             }
-            // If there is no existing user, hash the password
             return User.hashPassword(password);
         })
         .then(hash => {
@@ -125,15 +111,11 @@ router.post('/', (req, res) => {
             });
         })
         .then(user => {
-
-            //return res.status(201).json(user.apiRepr());
             var apiRepr = user.apiRepr()
             const authToken = createAuthToken(apiRepr);
             res.json(Object.assign({}, {authToken}, apiRepr));
         })
         .catch(err => {
-            // Forward validation errors on to the client, otherwise give a 500
-            // error because something unexpected has happened
             if (err.reason === 'ValidationError') {
                 return res.status(err.code).json(err);
             }

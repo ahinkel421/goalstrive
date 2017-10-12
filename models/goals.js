@@ -5,8 +5,6 @@ const goalSchema = mongoose.Schema({
   eta: {type: Date},
   description: {type: String},
   subGoals: {type: Array, default: []},
-  //This assigns a user ID to every goal. That user ID corresponds
-  //to the current user's user ID. Keeps track of which user the goal belongs to.
   userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true}
 });
 

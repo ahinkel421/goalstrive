@@ -4,7 +4,6 @@ const router = express.Router();
 const {Goal} = require('../models/goals');
 const passport = require('passport');
 
-//In order to view/get goals, the user must be authenticated.
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 	Goal
 	.find({userId: req.user.id})
@@ -18,7 +17,6 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 	});
 });
 
-//In order to view/get goals by id, the user must be authenticated. (Do we really need this?)
 router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
 	Goal
 	.find({_id:req.params.id, userId: req.user.id})
@@ -30,7 +28,6 @@ router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) =>
 	});
 });
 
-//In order to create/post goals, the user must be authenticated.
 router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 
 	const requiredFields = ['destination', 'eta', 'description'];
@@ -58,7 +55,6 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 
 });
 
-//In order to delete goals, the user must be authenticated.
 router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
 	if(!req.body.id) {
 		res.status(400).json({error: "Please enter an id in the request body and make sure it matches the request path id."})
@@ -83,7 +79,6 @@ router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res)
 	});
 });
 
-//In order to update goals, the user must be authenticated.
 router.put('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
 
 	//edge cases
