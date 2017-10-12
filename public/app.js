@@ -92,7 +92,6 @@ $(function () {
 	$('.goals-container').on('click', '.delete-goal', function(event) {
 		event.preventDefault();
 		let goalID = $(this).parents('.individual-goal').attr("data-id");
-		console.log(goalID);
 		let deleteConfirmation = confirm('Are you sure?');
 		if (deleteConfirmation) {
 			handleDeleteDestinationGoal(goalID);
@@ -125,7 +124,6 @@ $(function () {
 		event.preventDefault();
 		let newCheckpoint = $(this).children('.new-checkpoint').val();
 		let goalID = $(this).parents('.individual-goal').attr('data-id');
-		console.log(newCheckpoint);
 		handleNewCheckpointGoal(goalID, newCheckpoint);
 		$(this).parents('.collapsable-goal-info').removeClass('hidden');
 	});
@@ -195,7 +193,6 @@ function handleAuth(route, username, password) {
 	};
 
 	//api/auth/login
-	console.log(userData)
 
 	$.ajax({
 		url: `/api/${route}`,
@@ -216,9 +213,7 @@ function handleAuth(route, username, password) {
 		},
 		error: function(errorData){
 			console.log("we couldn't authenticate");
-			console.log(errorData);
 			if (errorData.responseJSON === undefined) {
-				console.log(errorData.status);
 				handleLoginErrors(errorData.status, username, password);
 				return;
 			}
@@ -244,8 +239,6 @@ function showDestinationGoals() {
 		success: function(goalsArray){
 			state.goalsArray = goalsArray;
 			console.log("yay! We have our goals.");
-			console.log(goalsArray);
-			console.log(state.token);
 			
 			if (goalsArray.length > 0) {
 				$('#my-destination-goals-page').removeClass('hidden');
@@ -286,7 +279,6 @@ function showDestinationGoals() {
 		},
 		error: function(errorData){
 			console.log("we couldn't get goals");
-			console.log(errorData)
 		},
 	});
 }
@@ -322,13 +314,11 @@ function handleNewDestinationGoal(destination, eta, description) {
 		},
 		success: function(data) {
 			console.log('Woohoo! New goal created!');
-			console.log(data);
 			showDestinationGoals();
 		},
 		error: function(errorData) {
-			console.log("something went wrong...", errorData, goalData)
 			var parsedDate=Date.parse(eta);
-			//below???
+
 			if (!isNaN(parsedDate)==false)
 			{
 				alert('Please enter a valid date in the "ETA" section.');
@@ -346,7 +336,6 @@ function handleNewCheckpointGoal(goalID, subGoal) {
 		id: goalID,
 		subGoals: currentGoal.subGoals
 	};
-	console.log(goalData);
 	$.ajax({
 		url: `api/goals/${goalID}`,
 		type: "PUT",
@@ -358,11 +347,9 @@ function handleNewCheckpointGoal(goalID, subGoal) {
 		},
 		success: function(data) {
 			console.log('Woohoo! Goal updated');
-			console.log(data);
 			showDestinationGoals();
 		},
 		error: function(errorData) {
-			console.log("something went wrong...", errorData, goalData)
 			var parsedDate=Date.parse(eta);
 			if (!isNaN(parsedDate)==false)
 			{
@@ -388,7 +375,6 @@ function handleDeleteDestinationGoal(id) {
 			showDestinationGoals();
 		},
 		error: function(errorData) {
-			console.log(errorData);
 		}
 	});
 }
