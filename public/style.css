@@ -201,8 +201,8 @@ Homepage Styling
 }
 
 .overview {
-	width: 55%;
-	margin: 25px auto;
+	width: 63%;
+	margin: 42px auto;
 	font-size: 20px;
 	line-height: 180%;
 }
@@ -219,6 +219,10 @@ Homepage Styling
 
 #more-info {
 	margin: 40px;
+}
+
+#goal-explaination-pic {
+	width: 60%;
 }
 
 
