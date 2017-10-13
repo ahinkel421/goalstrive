@@ -222,7 +222,7 @@ Homepage Styling
 }
 
 #goal-explaination-pic {
-	width: 60%;
+	width: 65%;
 }
 
 
@@ -578,6 +578,10 @@ Media Queries
 		width: 85%;
 	}
 
+	#goal-explaination-pic {
+		width: 80%;
+	}
+
 }
 
 @media (max-width: 750px) {
@@ -786,6 +790,10 @@ Media Queries
 		width: 186px;
 		font-size: 13px;
 	}
+
+	#goal-explaination-pic {
+		width: 100%;
+	}
 }
 
 @media (max-width: 520px) {
@@ -936,13 +944,13 @@ Media Queries
 	.homepage-header {
 		width: 80%;
 		margin: 0 auto;
-		font-size: 70px;
+		font-size: 65px;
 	}
 
 	.overview {
 		width: 60%;
 		margin: 50px auto;
-		font-size: 25px;
+		font-size: 22px;
 		line-height: 180%;
 	}
 
@@ -960,6 +968,10 @@ Media Queries
 	.user-info {
 		width: 55%;
 		font-size: 22px;
+	}
+
+	#goal-explaination-pic {
+		width: 40%;
 	}
 }
 
