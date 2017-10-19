@@ -89,6 +89,8 @@ The arrows to the right of each goal are clickable and will collapse that specif
 
 Live Demo: https://goalstrive.herokuapp.com/
 
+&nbsp;
+
 ## Technologies
 
 
