@@ -790,6 +790,11 @@ Media Queries
 		font-size: 15px;
 	}
 
+	#checkpoint-button {
+		width: 138px;
+		font-size: 12px;
+	}
+
 	.delete-goal {
 		font-size: 10px;
 	}
