@@ -38,6 +38,7 @@ body {
 	font-size: 18px;
 	font-family: 'Raleway', sans-serif;
 	border: none;
+	border-radius: 5px;
 }
 
 .quote {
@@ -114,7 +115,7 @@ Navbar Styling
 #get-started-link {
 	color: #C6FFEC;
 	border: 1px solid #C6FFEC;
-	border-radius: 2px;
+	border-radius: 5px;
 	padding: 5px;
 	top: 15px;
 }
@@ -476,6 +477,14 @@ My Destination Goals Page Styling
 
 .checkpoint-goal {
 	margin: 30px 0 60px 0;
+}
+
+#checkpoint-button {
+	width: 170px;
+	height: 26px;
+	font-size: 15px; 
+	margin: 30px 0 0 3px;
+	display: block;
 }
 
 .new-checkpoint-form::before, .individual-checkpoint-goal::before {

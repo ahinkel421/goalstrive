@@ -201,7 +201,6 @@ function handleAuth(route, username, password) {
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function(data){
-			console.log("yay! authenticated");
 			state.loggedIn = true;
 			//state.token is now whatever token was sent to the user
 			//in order to authenticate them from page to page.
@@ -238,7 +237,6 @@ function showDestinationGoals() {
 		},
 		success: function(goalsArray){
 			state.goalsArray = goalsArray;
-			console.log("yay! We have our goals.");
 			
 			if (goalsArray.length > 0) {
 				$('#my-destination-goals-page').removeClass('hidden');
@@ -263,6 +261,7 @@ function showDestinationGoals() {
 									<li class="grey-text checkpoint-goal">
 										<form class="new-checkpoint-form">
 											<input class="new-checkpoint" type="text" name="new-checkpoint" placeholder="New Checkpoint..." autocomplete="off">
+											<button class="button" id="checkpoint-button">Submit checkpoint</button>
 										</form>
 									</li>
 								</ul>
